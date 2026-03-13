@@ -1,7 +1,10 @@
-name: Sync Project Boards Manually
+name: Sync Project Boards
 
 on:
   workflow_dispatch:
+  schedule:
+    # 11:00 AM, 5:00 PM Asia/Colombo (UTC+5:30) on weekdays
+    - cron: '30 5,11 * * 1-5'
 
 jobs:
   sync-boards:

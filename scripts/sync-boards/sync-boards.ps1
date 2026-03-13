@@ -605,3 +605,39 @@ if ($body -match [regex]::Escape($dateHeader)) {
 $finalContent = $headerBlock + "`n" + $newBody.TrimEnd("`r", "`n") + "`n"
 $finalContent | Set-Content -Path $changelogPath -Encoding UTF8
 Write-Host "`n[LOG] Changelog updated: $changelogPath"
+
+# ============================================================
+# PHASE E: Changelog Cleanup (trim old entries)
+# ============================================================
+$retentionDays = if ($config.changelogRetentionDays) { $config.changelogRetentionDays } else { 14 }
+$cutoffDate = $today.AddDays(-$retentionDays).Date
+
+Write-Host "[CLEANUP] Retaining entries from last $retentionDays days (cutoff: $($cutoffDate.ToString('yyyy-MM-dd')))"
+
+$rawContent = Get-Content -Raw $changelogPath
+$header = "# Sync Boards - Run Log`n"
+$rawBody = $rawContent -replace "^# Sync Boards - Run Log\r?\n?", ""
+$rawBody = $rawBody.TrimStart("`r", "`n")
+
+# Split the body by date sections (## YYYY-MM-DD)
+$dateSections = [regex]::Split($rawBody, '(?m)(?=^## \d{4}-\d{2}-\d{2})')
+$keptSections = [System.Collections.Generic.List[string]]::new()
+
+foreach ($section in $dateSections) {
+    $section = $section.Trim()
+    if (-not $section) { continue }
+    $dateMatch = [regex]::Match($section, '^## (\d{4}-\d{2}-\d{2})')
+    if ($dateMatch.Success) {
+        $sectionDate = [datetime]::Parse($dateMatch.Groups[1].Value)
+        if ($sectionDate -ge $cutoffDate) {
+            $keptSections.Add($section)
+        } else {
+            Write-Host "[CLEANUP] Removing entries from $($dateMatch.Groups[1].Value)"
+        }
+    }
+}
+
+$cleanedBody = ($keptSections -join "`n`n---`n`n")
+$cleanedContent = $header + "`n" + $cleanedBody.TrimEnd("`r", "`n") + "`n"
+$cleanedContent | Set-Content -Path $changelogPath -Encoding UTF8
+Write-Host "[CLEANUP] Done. Kept $($keptSections.Count) date section(s)."

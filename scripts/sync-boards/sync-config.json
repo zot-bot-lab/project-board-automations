@@ -85,5 +85,6 @@
                           "Done",
                           "Blocked",
                           "Discarded"
-                      ]
+                      ],
+    "changelogRetentionDays": 14
 }
