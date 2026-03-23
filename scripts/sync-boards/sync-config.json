@@ -76,6 +76,18 @@
                                 "projectNumber":  7,
                                 "projectId":  "PVT_kwDODgXGSs4BQod8",
                                 "projectName":  "Yanthra Product project"
+                            },
+                            {
+                                "org":  "team-zeroone",
+                                "projectNumber":  34,
+                                "projectId":  "PVT_kwDOA-aWxs4BGtb2",
+                                "projectName":  "ZOT Sales Board"
+                            },
+                            {
+                                "org":  "team-zeroone",
+                                "projectNumber":  32,
+                                "projectId":  "PVT_kwDOA-aWxs4BFnT_",
+                                "projectName":  "ZOT Marketing Board"
                             }
                         ],
     "validStatuses":  [
@@ -86,5 +98,5 @@
                           "Blocked",
                           "Discarded"
                       ],
-    "changelogRetentionDays": 14
+    "changelogRetentionDays":  14
 }

@@ -630,6 +630,8 @@ foreach ($section in $dateSections) {
     if ($dateMatch.Success) {
         $sectionDate = [datetime]::Parse($dateMatch.Groups[1].Value)
         if ($sectionDate -ge $cutoffDate) {
+            # Strip out any trailing dividers and whitespace so they don't duplicate when joining
+            $section = $section -replace '(?s)(\s+---)+\s*$', ''
             $keptSections.Add($section)
         } else {
             Write-Host "[CLEANUP] Removing entries from $($dateMatch.Groups[1].Value)"
