@@ -42,6 +42,18 @@
                                 "projectName":  "Asset Shield"
                             },
                             {
+                                "org":  "lexigram-tech",
+                                "projectNumber":  1,
+                                "projectId":  "PVT_kwDODDG8D84A9R5e",
+                                "projectName":  "Lexigram Product Board"
+                            },
+                            {
+                                "org":  "lexigram-tech",
+                                "projectNumber":  2,
+                                "projectId":  "PVT_kwDODDG8D84BTSqN",
+                                "projectName":  "Lexigram Marketing Board"
+                            },
+                            {
                                 "org":  "zot-internal",
                                 "projectNumber":  1,
                                 "projectId":  "PVT_kwDODgXGSs4BFl4l",

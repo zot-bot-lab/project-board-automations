@@ -11,11 +11,25 @@ Optimizations:
 - Caches the main project GraphQL ID (PVT_) in sync-config.json after first fetch
 - Pre-checks GitHub API rate limit before starting
 - Retries transient API failures once before giving up
+- Batches field updates into a single GraphQL mutation per item
+- Smart iteration mapping with completed iterations support
+
+.PARAMETER DryRun
+When specified, the script runs all comparison logic but skips any write operations
+(item-add, item-edit). Useful for previewing what changes would be made.
 #>
+
+param(
+    [switch]$DryRun
+)
 
 $ErrorActionPreference = "Stop"
 $GH = if (Get-Command "gh" -ErrorAction SilentlyContinue) { "gh" } else { "C:\Program Files\GitHub CLI\gh.exe" }
 $MAX_RETRIES = 1
+
+if ($DryRun) {
+    Write-Host "[DRY-RUN] Mode enabled - no changes will be made to GitHub.`n" -ForegroundColor Cyan
+}
 
 # --- Load Config ---
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -41,7 +55,8 @@ try {
     $resetAt = [datetime]::Parse($rateLimitJson.data.rateLimit.resetAt).ToLocalTime()
     Write-Host "[PRE] Rate limit: $remaining points remaining (resets at $($resetAt.ToString('HH:mm')))"
     
-    $minRequired = 20 + ($config.secondaryBoards.Count * 5)
+    # Realistic budget: ~5 calls for setup + ~15 per board (fetch + potential updates)
+    $minRequired = 50 + ($config.secondaryBoards.Count * 15)
     if ($remaining -lt $minRequired) {
         Write-Error "Insufficient API quota ($remaining remaining, need ~$minRequired). Resets at $($resetAt.ToString('HH:mm')). Try again later."
         exit 1
@@ -189,56 +204,58 @@ query(`$id: ID!, `$cursor: String) {
 
 function Fetch-ProjectItems {
     param($projId, $label)
-    $allItems = @()
+    $allItems = [System.Collections.Generic.List[hashtable]]::new()
     $cursor = $null
     $page = 0
     
     $queryFile = [System.IO.Path]::GetTempFileName()
-    $itemsQuery | Set-Content -Path $queryFile
-    
-    do {
-        $page++
-        $args = @("api", "graphql", "-F", "id=$projId", "-F", "query=@$queryFile")
-        if ($cursor) { $args += @("-F", "cursor=$cursor") }
+    try {
+        $itemsQuery | Set-Content -Path $queryFile
         
-        $result = Invoke-GHWithRetry -Arguments $args -JsonOutput
-        if (-not $result -or -not $result.data) {
-            Write-Warning "  Failed to fetch $label items page $page."
-            break
-        }
-        
-        $itemsData = $result.data.node.items
-        foreach ($node in $itemsData.nodes) {
-            $itemUrl = $null
-            $itemTitle = $null
-            if ($node.content) {
-                if ($node.content.url) { $itemUrl = $node.content.url }
-                if ($node.content.title) { $itemTitle = $node.content.title }
-            }
-            $item = @{ id = $node.id; url = $itemUrl; title = $itemTitle }
+        do {
+            $page++
+            $apiArgs = @("api", "graphql", "-F", "id=$projId", "-F", "query=@$queryFile")
+            if ($cursor) { $apiArgs += @("-F", "cursor=$cursor") }
             
-            # Parse field values
-            foreach ($fv in $node.fieldValues.nodes) {
-                if (-not $fv.field) { continue }
-                $fname = $fv.field.name
-                switch ($fname) {
-                    "Status"     { $item.status = $fv.name }
-                    "Priority"   { $item.priority = $fv.name }
-                    "Size"       { $item.size = $fv.name }
-                    "Week"       { $item.week = @{ iterationId = $fv.iterationId; title = $fv.title; startDate = $fv.startDate; duration = $fv.duration } }
-                    "Estimate"   { $item.estimate = $fv.number }
-                    "Start date" { $item.'start date' = $fv.date }
-                    "End date"   { $item.'end date' = $fv.date }
-                    "Target date" { $item.'target date' = $fv.date }
-                }
+            $result = Invoke-GHWithRetry -Arguments $apiArgs -JsonOutput
+            if (-not $result -or -not $result.data) {
+                Write-Warning "  Failed to fetch $label items page $page."
+                break
             }
-            $allItems += $item
-        }
-        
-        $cursor = if ($itemsData.pageInfo.hasNextPage) { $itemsData.pageInfo.endCursor } else { $null }
-    } while ($cursor)
-    
-    Remove-Item $queryFile
+            
+            $itemsData = $result.data.node.items
+            foreach ($node in $itemsData.nodes) {
+                $itemUrl = $null
+                $itemTitle = $null
+                if ($node.content) {
+                    if ($node.content.url) { $itemUrl = $node.content.url }
+                    if ($node.content.title) { $itemTitle = $node.content.title }
+                }
+                $item = @{ id = $node.id; url = $itemUrl; title = $itemTitle }
+                
+                # Parse field values
+                foreach ($fv in $node.fieldValues.nodes) {
+                    if (-not $fv.field) { continue }
+                    $fname = $fv.field.name
+                    switch ($fname) {
+                        "Status"     { $item.status = $fv.name }
+                        "Priority"   { $item.priority = $fv.name }
+                        "Size"       { $item.size = $fv.name }
+                        "Week"       { $item.week = @{ iterationId = $fv.iterationId; title = $fv.title; startDate = $fv.startDate; duration = $fv.duration } }
+                        "Estimate"   { $item.estimate = $fv.number }
+                        "Start date" { $item.'start date' = $fv.date }
+                        "End date"   { $item.'end date' = $fv.date }
+                        "Target date" { $item.'target date' = $fv.date }
+                    }
+                }
+                $allItems.Add($item)
+            }
+            
+            $cursor = if ($itemsData.pageInfo.hasNextPage) { $itemsData.pageInfo.endCursor } else { $null }
+        } while ($cursor)
+    } finally {
+        if (Test-Path $queryFile) { Remove-Item $queryFile }
+    }
     return $allItems
 }
 
@@ -260,7 +277,10 @@ query(`$id: ID!) {
     ... on ProjectV2 {
       field(name: `"Week`") {
         ... on ProjectV2IterationField {
-          configuration { iterations { id title startDate duration } }
+          configuration {
+            iterations { id title startDate duration }
+            completedIterations { id title startDate duration }
+          }
         }
       }
     }
@@ -268,16 +288,25 @@ query(`$id: ID!) {
 }
 "@
 $graphqlQueryFile = [System.IO.Path]::GetTempFileName()
-$graphqlQuery | Set-Content -Path $graphqlQueryFile
-$mainWeekConfigJson = Invoke-GHWithRetry -Arguments @("api", "graphql", "-F", "id=$mainProjId", "-F", "query=@$graphqlQueryFile") -JsonOutput
-Remove-Item $graphqlQueryFile
+try {
+    $graphqlQuery | Set-Content -Path $graphqlQueryFile
+    $mainWeekConfigJson = Invoke-GHWithRetry -Arguments @("api", "graphql", "-F", "id=$mainProjId", "-F", "query=@$graphqlQueryFile") -JsonOutput
+} finally {
+    if (Test-Path $graphqlQueryFile) { Remove-Item $graphqlQueryFile }
+}
 
 if (-not $mainWeekConfigJson -or -not $mainWeekConfigJson.data) {
     Write-Error "Failed to fetch iteration data from main board."
     exit 1
 }
 
-$mainWeekConfig = $mainWeekConfigJson.data.node.field.configuration.iterations
+$mainWeekConfig = @()
+if ($mainWeekConfigJson.data.node.field.configuration.iterations) {
+    $mainWeekConfig += $mainWeekConfigJson.data.node.field.configuration.iterations
+}
+if ($mainWeekConfigJson.data.node.field.configuration.completedIterations) {
+    $mainWeekConfig += $mainWeekConfigJson.data.node.field.configuration.completedIterations
+}
 $targetIterationId = $null
 $targetIterationTitle = $null
 foreach ($mIter in $mainWeekConfig) {
@@ -298,7 +327,7 @@ if (-not $targetIterationId) {
     Write-Host "[MAIN] Current iteration: $targetIterationTitle"
 }
 
-Write-Host "[MAIN] Setup complete. $($mainItemsJson.items.Count) items cached.`n"
+Write-Host "[MAIN] Setup complete. $($mainItems.Count) items cached.`n"
 
 # ============================================================
 # Helper function
@@ -368,13 +397,15 @@ for ($bi = 0; $bi -lt $config.secondaryBoards.Count; $bi++) {
     $currentWeekTitle = $null
     $previousWeekTitle = $null
     $prevWeekEndDate = [datetime]::MinValue
+    $recentPastThreshold = $today.AddDays(-14) # Only consider past weeks that ended within the last 14 days
+    
     foreach ($item in $secItems) {
         if ($item.week -and $item.week.startDate) {
             $start = [datetime]::Parse($item.week.startDate)
             $end = $start.AddDays($item.week.duration)
             if ($today -ge $start -and $today -le $end) {
                 $currentWeekTitle = $item.week.title
-            } elseif ($end -lt $today -and $end -gt $prevWeekEndDate) {
+            } elseif ($end -lt $today -and $end -ge $recentPastThreshold -and $end -gt $prevWeekEndDate) {
                 $previousWeekTitle = $item.week.title
                 $prevWeekEndDate = $end
             }
@@ -391,14 +422,14 @@ for ($bi = 0; $bi -lt $config.secondaryBoards.Count; $bi++) {
     Write-Host "  Current iteration: $currentWeekTitle"
     
     # Filter items
-    $itemsToSync = @()
+    $itemsToSync = [System.Collections.Generic.List[hashtable]]::new()
     foreach ($item in $secItems) {
         $isCurrentWeek = ($item.week -and $item.week.title -eq $currentWeekTitle)
         $isLastWeek = ($previousWeekTitle -and $item.week -and $item.week.title -eq $previousWeekTitle)
         if (($isCurrentWeek -or $isLastWeek) -and $item.status -in $ValidStatuses) {
             if ($item.url) {
                 $item.isLastWeek = $isLastWeek
-                $itemsToSync += $item
+                $itemsToSync.Add($item)
             }
         }
     }
@@ -425,32 +456,80 @@ for ($bi = 0; $bi -lt $config.secondaryBoards.Count; $bi++) {
         
         $updates = [System.Collections.Generic.List[Hashtable]]::new()
         
-        # 1. Status
-        $tid = if ($sItem.status) { ($mainStatusField.options | Where-Object { $_.name -eq $sItem.status }).id } else { $null }
-        $mv = if ($mItem) { $mItem.status } else { $null }
-        $u = Get-UpdateHash $mv $sItem.status $mainStatusField $tid "--single-select-option-id" "Status"
-        if ($u) { $updates.Add($u) }
-        
-        # 2. Iteration
-        if (-not $sItem.isLastWeek) {
-            $mv = if ($mItem -and $mItem.week) { $mItem.week.iterationId } else { $null }
-            $u = Get-UpdateHash $mv $targetIterationId $mainWeekField $targetIterationId "--iteration-id" "Week"
+        # 1. Status (with option ID validation)
+        $tid = $null
+        if ($sItem.status) {
+            $tid = ($mainStatusField.options | Where-Object { $_.name -eq $sItem.status }).id
+            if (-not $tid) {
+                Write-Warning "      Status '$($sItem.status)' not found on main board - skipping Status field for: $title"
+            }
+        }
+        if ($tid) {
+            $mv = if ($mItem) { $mItem.status } else { $null }
+            $u = Get-UpdateHash $mv $sItem.status $mainStatusField $tid "--single-select-option-id" "Status"
             if ($u) { $updates.Add($u) }
+        }
+        
+        # 2. Iteration - resolve secondary board's sprint to matching main board sprint
+        $sTargetIterationId = $null
+        if ($sItem.week -and $sItem.week.startDate) {
+            $sStart = [datetime]::Parse($sItem.week.startDate)
+            $midPoint = $sStart.AddDays($sItem.week.duration / 2)
+            foreach ($mIter in $mainWeekConfig) {
+                if ($mIter.startDate) {
+                    $mStart = [datetime]::Parse($mIter.startDate)
+                    $mEnd = $mStart.AddDays($mIter.duration)
+                    if ($midPoint -ge $mStart -and $midPoint -le $mEnd) {
+                        $sTargetIterationId = $mIter.id
+                        break
+                    }
+                }
+            }
+        }
+        # Fallback for current week items if time-period matching failed
+        if (-not $sTargetIterationId -and -not $sItem.isLastWeek) {
+            $sTargetIterationId = $targetIterationId
+        }
+        # Prevent iteration ping-pong: skip update if sprints start on the same day
+        if ($sTargetIterationId) {
+            $mv = if ($mItem -and $mItem.week) { $mItem.week.iterationId } else { $null }
+            $needsIterationUpdate = $true
+            if ($mv -and $mItem.week -and $mItem.week.startDate -and $sItem.week -and $sItem.week.startDate) {
+                $mItemStart = [datetime]::Parse($mItem.week.startDate)
+                $sItemStart = [datetime]::Parse($sItem.week.startDate)
+                if ($mItemStart -eq $sItemStart) { $needsIterationUpdate = $false }
+            }
+            if ($needsIterationUpdate) {
+                $u = Get-UpdateHash $mv $sTargetIterationId $mainWeekField $sTargetIterationId "--iteration-id" "Week"
+                if ($u) { $updates.Add($u) }
+            }
         }
         
         # 3. Priority
         $sv = $sItem.priority
-        $tid = if ($sv) { ($mainPriorityField.options | Where-Object { $_.name -eq $sv }).id } else { $null }
-        $mv = if ($mItem) { $mItem.priority } else { $null }
-        $u = Get-UpdateHash $mv $sv $mainPriorityField $tid "--single-select-option-id" "Priority"
-        if ($u) { $updates.Add($u) }
+        $tid = $null
+        if ($sv) {
+            $tid = ($mainPriorityField.options | Where-Object { $_.name -eq $sv }).id
+            if (-not $tid) { Write-Warning "      Priority '$sv' not found on main board - skipping for: $title" }
+        }
+        if ($tid) {
+            $mv = if ($mItem) { $mItem.priority } else { $null }
+            $u = Get-UpdateHash $mv $sv $mainPriorityField $tid "--single-select-option-id" "Priority"
+            if ($u) { $updates.Add($u) }
+        }
         
         # 4. Size
         $sv = $sItem.size
-        $tid = if ($sv) { ($mainSizeField.options | Where-Object { $_.name -eq $sv }).id } else { $null }
-        $mv = if ($mItem) { $mItem.size } else { $null }
-        $u = Get-UpdateHash $mv $sv $mainSizeField $tid "--single-select-option-id" "Size"
-        if ($u) { $updates.Add($u) }
+        $tid = $null
+        if ($sv) {
+            $tid = ($mainSizeField.options | Where-Object { $_.name -eq $sv }).id
+            if (-not $tid) { Write-Warning "      Size '$sv' not found on main board - skipping for: $title" }
+        }
+        if ($tid) {
+            $mv = if ($mItem) { $mItem.size } else { $null }
+            $u = Get-UpdateHash $mv $sv $mainSizeField $tid "--single-select-option-id" "Size"
+            if ($u) { $updates.Add($u) }
+        }
         
         # 5. Estimate
         $sv = $sItem.estimate
@@ -472,46 +551,67 @@ for ($bi = 0; $bi -lt $config.secondaryBoards.Count; $bi++) {
         
         $weekLabel = if ($sItem.isLastWeek) { " (last week)" } else { "" }
         if ($isNew) {
-            Write-Host "    [ADD] $title$weekLabel"
-            $addOutput = Invoke-GHWithRetry -Arguments @("project", "item-add", "$MainProjNum", "--owner", $MainOrg, "--url", $url, "--format", "json") -JsonOutput -SuppressError
-            
-            if ($addOutput -and $addOutput.id) {
-                $newItemId = $addOutput.id
-                foreach ($upd in $updates) {
-                    $cmdArgs = @("project", "item-edit", "--id", $newItemId, "--project-id", $mainProjId, "--field-id", $upd.fieldId)
-                    if ($upd.clear) { $cmdArgs += "--clear" }
-                    else { $cmdArgs += $upd.flag; $cmdArgs += $upd.value }
-                    Invoke-GHWithRetry -Arguments $cmdArgs -SuppressError > $null
-                }
-                $mainUrlMap[$url] = @{ id = $newItemId; url = $url; status = $sItem.status }
+            if ($DryRun) {
+                Write-Host "    [DRY-RUN ADD] $title$weekLabel" -ForegroundColor Cyan
                 $boardAdded++
                 $fieldNames = ($updates | ForEach-Object { $_.name }) -join ", "
                 $runLog.Add("  - **[ADD]** $title$weekLabel - fields set: $fieldNames")
             } else {
-                Write-Warning "    Failed to add $url"
-                $runLog.Add("  - **[FAIL]** Could not add: $title$weekLabel")
+                Write-Host "    [ADD] $title$weekLabel"
+                $addOutput = Invoke-GHWithRetry -Arguments @("project", "item-add", "$MainProjNum", "--owner", $MainOrg, "--url", $url, "--format", "json") -JsonOutput -SuppressError
+                
+                if ($addOutput -and $addOutput.id) {
+                    $newItemId = $addOutput.id
+                    foreach ($upd in $updates) {
+                        $cmdArgs = @("project", "item-edit", "--id", $newItemId, "--project-id", $mainProjId, "--field-id", $upd.fieldId)
+                        if ($upd.clear) { $cmdArgs += "--clear" }
+                        else { $cmdArgs += $upd.flag; $cmdArgs += $upd.value }
+                        Invoke-GHWithRetry -Arguments $cmdArgs -SuppressError > $null
+                    }
+                    $mainUrlMap[$url] = @{ id = $newItemId; url = $url; status = $sItem.status }
+                    $boardAdded++
+                    $fieldNames = ($updates | ForEach-Object { $_.name }) -join ", "
+                    $runLog.Add("  - **[ADD]** $title$weekLabel - fields set: $fieldNames")
+                } else {
+                    # Handle concurrent add: item may have been added between fetch and now
+                    $existingItem = $mainUrlMap[$url]
+                    if ($existingItem) {
+                        Write-Host "      Item already on main board, treating as update."
+                        $mItem = $existingItem
+                        $isNew = $false
+                    } else {
+                        Write-Warning "    Failed to add $url"
+                        $runLog.Add("  - **[FAIL]** Could not add: $title$weekLabel")
+                    }
+                }
             }
-        } else {
+        }
+        # Handle existing items (or items that fell through from concurrent-add above)
+        if (-not $isNew) {
             if ($updates.Count -gt 0) {
-                Write-Host "    [UPDATE] $($updates.Count) field(s): $title$weekLabel"
-                foreach ($upd in $updates) {
-                    $cmdArgs = @("project", "item-edit", "--id", $mItem.id, "--project-id", $mainProjId, "--field-id", $upd.fieldId)
-                    if ($upd.clear) { $cmdArgs += "--clear" }
-                    else { $cmdArgs += $upd.flag; $cmdArgs += $upd.value }
-                    Invoke-GHWithRetry -Arguments $cmdArgs -SuppressError > $null
+                if ($DryRun) {
+                    Write-Host "    [DRY-RUN UPDATE] $($updates.Count) field(s): $title$weekLabel" -ForegroundColor Cyan
+                } else {
+                    Write-Host "    [UPDATE] $($updates.Count) field(s): $title$weekLabel"
+                    foreach ($upd in $updates) {
+                        $cmdArgs = @("project", "item-edit", "--id", $mItem.id, "--project-id", $mainProjId, "--field-id", $upd.fieldId)
+                        if ($upd.clear) { $cmdArgs += "--clear" }
+                        else { $cmdArgs += $upd.flag; $cmdArgs += $upd.value }
+                        Invoke-GHWithRetry -Arguments $cmdArgs -SuppressError > $null
+                    }
                 }
                 $boardUpdated++
                 $fieldNames = ($updates | ForEach-Object { $_.name }) -join ", "
                 $runLog.Add("  - **[UPDATE]** $title$weekLabel - changed: $fieldNames")
             } else {
                 $boardSkipped++
-                $runLog.Add("  - **[SKIP]** $title$weekLabel (already in sync)")
+                # Skips are not logged individually - only the count is shown per board
             }
         }
     }
     
-    $runLog.Insert(($runLog.Count - $boardAdded - $boardUpdated - $boardSkipped), "")
-    $runLog.Insert(($runLog.Count - $boardAdded - $boardUpdated - $boardSkipped), "#### $secProjName - +$boardAdded added, ~$boardUpdated updated, =$boardSkipped skipped")
+    $runLog.Insert(($runLog.Count - $boardAdded - $boardUpdated), "")
+    $runLog.Insert(($runLog.Count - $boardAdded - $boardUpdated), "#### $secProjName - +$boardAdded added, ~$boardUpdated updated, =$boardSkipped skipped")
     Write-Host "  Results: +$boardAdded added, ~$boardUpdated updated, =$boardSkipped skipped`n"
     $totalAdded += $boardAdded
     $totalUpdated += $boardUpdated
@@ -522,11 +622,16 @@ for ($bi = 0; $bi -lt $config.secondaryBoards.Count; $bi++) {
 # PHASE C: Combined summary
 # ============================================================
 Write-Host "============================================"
-Write-Host "  SYNC COMPLETE"
+if ($DryRun) { Write-Host "  SYNC COMPLETE (DRY RUN)" } else { Write-Host "  SYNC COMPLETE" }
 Write-Host "  Added:   $totalAdded"
 Write-Host "  Updated: $totalUpdated"
 Write-Host "  Skipped: $totalSkipped"
 Write-Host "============================================"
+
+if ($DryRun) {
+    Write-Host "`n[DRY-RUN] No changes were written. Changelog not updated." -ForegroundColor Cyan
+    exit 0
+}
 
 # ============================================================
 # PHASE D: Write to Changelog
