@@ -1,5 +1,101 @@
 # Sync Boards - Run Log
 
+## 2026-03-31
+
+### V1 - 12:16 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 3     | 4       | 43       |
+
+
+#### StudyReserve Product Board - +0 added, ~0 updated, =9 skipped
+  - **[SKIP]** Course -> New Registered Students, New Module Enrolments with module (Payments) (last week) (already in sync)
+  - **[SKIP]** Admin dashboard with a separate page only for admins (last week) (already in sync)
+  - **[SKIP]** Address PR comments in SR admin and SR API (last week) (already in sync)
+  - **[SKIP]** Admin dashboard feature (last week) (already in sync)
+  - **[SKIP]** Add pagination to API calls (already in sync)
+  - **[SKIP]** Add paginated search functionality (already in sync)
+  - **[SKIP]** Sort courses from teacher name when paginating the response (already in sync)
+  - **[SKIP]** Get the total value from the module's amount for stats (already in sync)
+  - **[SKIP]** Revert pagination for Courses endpoints (last week) (already in sync)
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +1 added, ~1 updated, =9 skipped
+  - **[ADD]** Summarize V3 profile - fields set: Status, Week, Start date, End date
+  - **[UPDATE]** Optimize fact checker - changed: Status
+  - **[SKIP]** Hide research agent comments from the public (already in sync)
+  - **[SKIP]** Research on Claude code agent implementation (last week) (already in sync)
+  - **[SKIP]** Improve research agent UI (last week) (already in sync)
+  - **[SKIP]** Paraphrasing with v1 writing profile inserts an empty text (last week) (already in sync)
+  - **[SKIP]** Fix heading invisibility on published articles (last week) (already in sync)
+  - **[SKIP]** Optimize paraphrase (already in sync)
+  - **[SKIP]** Optimize document generation (last week) (already in sync)
+  - **[SKIP]** Fact check results are displayed only after refreshing the page (last week) (already in sync)
+  - **[SKIP]** Writing profile selector for paraphrase is not intuitive to use (already in sync)
+
+#### hedwige-ui-rewrite - +0 added, ~1 updated, =13 skipped
+  - **[SKIP]** 1.3.1: Questions page (week 3) (last week) (already in sync)
+  - **[SKIP]** 1.3.2: Questions items (week 3) (already in sync)
+  - **[SKIP]** 1.3.3: Amendments page (week 3-4) (last week) (already in sync)
+  - **[SKIP]** 1.3.4: Amendments items (week 3-4) (already in sync)
+  - **[SKIP]** 1.3.5: Legislative dossiers (Folders) page (week 4) (last week) (already in sync)
+  - **[UPDATE]** 1.6.3: Public figure tracker page (week 7) - changed: Status
+  - **[SKIP]** 1.8.4: Alert creation components (alertCreate, alertCreateAdvanced) (week 7) (already in sync)
+  - **[SKIP]** 1.11.2: Dashboard charts (all 6) (week 4-5) (already in sync)
+  - **[SKIP]** 1.12.1: Local Context (decomposed) (week 5) (last week) (already in sync)
+  - **[SKIP]** 1.12.2: Kanban board (3 components + @dnd-kit) (week 5) (already in sync)
+  - **[SKIP]** 1.13.1: Signal board page (week 6) (already in sync)
+  - **[SKIP]** 1.13.2: Signal board popin (week 6) (already in sync)
+  - **[SKIP]** 2.1.8: Global error boundary (week 9-10) (last week) (already in sync)
+  - **[SKIP]** [FIX] Make Suivre mes dossiers section in home page scrollable (last week) (already in sync)
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - +0 added, ~0 updated, =2 skipped
+  - **[SKIP]** Improve AI summary result (last week) (already in sync)
+  - **[SKIP]** APP UI changes (already in sync)
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - Skipped
+*No items found in the current week.*
+
+#### BYM Project Board - Skipped
+*No items found in the current week.*
+
+#### QueueUp Product Board - +0 added, ~2 updated, =5 skipped
+  - **[SKIP]** Define API communication standards (REST structure, request/response format) (already in sync)
+  - **[SKIP]** Customer Dashboard Development (last week) (already in sync)
+  - **[SKIP]** Business Dashboard Development (last week) (already in sync)
+  - **[SKIP]** Notification System Implementation (last week) (already in sync)
+  - **[SKIP]** Analytics & Reporting (Basic) (already in sync)
+  - **[UPDATE]** Mobile Navigation Redesign - changed: Status
+  - **[UPDATE]** Desktop UI Layout Redesign - changed: Status
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### Yanthra Product project - +0 added, ~0 updated, =5 skipped
+  - **[SKIP]** [Backend] Create User Management API for Admins Managements (last week) (already in sync)
+  - **[SKIP]** implement platform setting page (last week) (already in sync)
+  - **[SKIP]** implement marketplace side bar filter location and machine type (last week) (already in sync)
+  - **[SKIP]** Implement location management in platform setting page (already in sync)
+  - **[SKIP]** Implement forgot password  page (already in sync)
+
+#### ZOT Sales Board - +2 added, ~0 updated, =0 skipped
+  - **[ADD]** CareJetty hardware team - fields set: Status, Week, Start date, End date
+  - **[ADD]** Codevus projects - fields set: Status, Week, Start date, End date
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
+---
+
 ## 2026-03-30
 
 ### V2 - 05:37 PM
@@ -2487,248 +2583,4 @@
   - **[SKIP]** Implement User entity and Role enum (Seller, Admin). Login and Register (last week) (already in sync)
   - **[UPDATE]** [Backend] Implement POST/GET/DELETE /ADD /api/v1/machines for new /edit/delete Listings - changed: End date
   - **[ADD]** [Backend] Create User Management API for Admins Managements - fields set: Status, Week, Start date, End date
-
----
-
-## 2026-03-16
-
-### V2 - 05:31 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 0     | 1       | 82       |
-
-
-#### StudyReserve Product Board - +0 added, ~0 updated, =31 skipped
-  - **[SKIP]** Implement disabled course delete feature (already in sync)
-  - **[SKIP]** [Admin][Module][Editor] HR insertion adds unintended extra blank line above selected text (last week) (already in sync)
-  - **[SKIP]** [Manager] Post Title allows saving with less than minimum required characters (last week) (already in sync)
-  - **[SKIP]** [Manager][Enrollments] same student can add multiple time in one module (last week) (already in sync)
-  - **[SKIP]** [Manager][Enrollments] without choosing student enroll button appear (last week) (already in sync)
-  - **[SKIP]** [Manager]{Enrollment} Using CVS Student add but not added to module (last week) (already in sync)
-  - **[SKIP]** [Manager] add teachers via CVS show enter module ID (last week) (already in sync)
-  - **[SKIP]** [Manager] manager cant delete the teachers (last week) (already in sync)
-  - **[SKIP]** [Manager]Tag can add 1 Character but not saved (last week) (already in sync)
-  - **[SKIP]** [Manager] Add more than 40 character tags not save (last week) (already in sync)
-  - **[SKIP]** [Teacher] create course 1 character get as a input no validation (last week) (already in sync)
-  - **[SKIP]** [Teacher]  add more than 200 Character form closed unexpectedly (last week) (already in sync)
-  - **[SKIP]** [Manager][Teacher][Admin]Same Bank account and Payment Link can add Multiple time (last week) (already in sync)
-  - **[SKIP]** [Teacher] Create course Cover image can add all file types (last week) (already in sync)
-  - **[SKIP]** [Teacher] Edit title field no validation minimum and maximum  (last week) (already in sync)
-  - **[SKIP]** [Teacher] create module no validation in  title field minimum and maximum (last week) (already in sync)
-  - **[SKIP]** [Teacher] delete module delete button visible not working (last week) (already in sync)
-  - **[SKIP]** [Teacher] Post title field not have validation for the maximum character limit (last week) (already in sync)
-  - **[SKIP]** [Teacher] Add video  no validation update and create  (last week) (already in sync)
-  - **[SKIP]** [Teacher]video watch time limit can add minus or 0 update and create  (last week) (already in sync)
-  - **[SKIP]** [teacher] Create Event No validation  for maximum character for the title (last week) (already in sync)
-  - **[SKIP]** [Teacher] Create Event Take invalid conference link (last week) (already in sync)
-  - **[SKIP]** [Teacher]Create/update assessment  no validation for the maximum character title (last week) (already in sync)
-  - **[SKIP]** [Admin][Create Course] Insert HR adds extra blank line above it (last week) (already in sync)
-  - **[SKIP]** [Admin][Create Course]Insert HR adds extra blank line above it (last week) (already in sync)
-  - **[SKIP]** [Admin][Assessment][Editor] HR insertion adds unintended extra blank line above selected text (last week) (already in sync)
-  - **[SKIP]** [Admin][Event][Editor]HR insertion adds unintended extra blank line above selected text (last week) (already in sync)
-  - **[SKIP]** [Admin][Assessment][Editor] HR insertion adds unintended extra blank line above selected text (last week) (already in sync)
-  - **[SKIP]** [Admin][Video][Editor] HR insertion adds unintended extra blank line above selected text (last week) (already in sync)
-  - **[SKIP]** [Admin][Post][Editor] HR insertion adds unintended extra blank line above selected text (last week) (already in sync)
-  - **[SKIP]** [Admin][Edit Module][Editor] HR insertion adds unintended extra blank line above selected text (last week) (already in sync)
-
-#### StudyQ Product Board - Skipped
-*No items found in the current week.*
-
-#### EarlyEmu - Document Generator - +0 added, ~0 updated, =19 skipped
-  - **[SKIP]** Minor updates on UI  (last week) (already in sync)
-  - **[SKIP]** Populate the content feed with articles from authors that the user doesn't follow (last week) (already in sync)
-  - **[SKIP]** Review and refactor author page code (last week) (already in sync)
-  - **[SKIP]** Rename static page layout component (last week) (already in sync)
-  - **[SKIP]** Document version history is not visible (already in sync)
-  - **[SKIP]** Improve super admin global configs page code (last week) (already in sync)
-  - **[SKIP]** Fact checker JSON format error (last week) (already in sync)
-  - **[SKIP]** Chat in production is broken (last week) (already in sync)
-  - **[SKIP]** Create profile document heading shows as "Untitled" on staging (last week) (already in sync)
-  - **[SKIP]** Add more fields on writing profile list fields (last week) (already in sync)
-  - **[SKIP]** Article generation takes long and then fails (last week) (already in sync)
-  - **[SKIP]** Onboarding Vishal to EffortAgent (last week) (already in sync)
-  - **[SKIP]** Cannot create writing profile using large text (already in sync)
-  - **[SKIP]** Fact check results are displayed only after refreshing the page (already in sync)
-  - **[SKIP]** Paraphrasing with v3 writing profile fails (already in sync)
-  - **[SKIP]** Generating a blog with writing profile fails (already in sync)
-  - **[SKIP]** Research on Claude code agent implementation (already in sync)
-  - **[SKIP]** Alternative for Wise (last week) (already in sync)
-  - **[SKIP]** Verify Stripe payment works on production (last week) (already in sync)
-
-#### hedwige-ui-rewrite - +0 added, ~1 updated, =25 skipped
-  - **[SKIP]** 1.1.3: Activation page (week 8) (last week) (already in sync)
-  - **[SKIP]** 1.9.2: Home feed (week 2) (already in sync)
-  - **[SKIP]** 1.9.3: Dashboard orchestrator (Dashboard page) (week 2) (already in sync)
-  - **[SKIP]** 1.9.4: Dashboard sidebar (week 2) (already in sync)
-  - **[SKIP]** 1.9.5: Dashboard API hooks (week 2) (last week) (already in sync)
-  - **[UPDATE]** 1.14.1: Account page (week 8) - changed: Status, Week
-  - **[SKIP]** 1.14.2: FAQ page (week 8) (already in sync)
-  - **[SKIP]** 1.14.3: Tutorials page (week 8) (already in sync)
-  - **[SKIP]** 1.9.6: Dashboard config components (week 7) (already in sync)
-  - **[SKIP]** 1.2.1: New folder page (week 2-3) (already in sync)
-  - **[SKIP]** 1.6.3: Public figure tracker page (week 7) (already in sync)
-  - **[SKIP]** 1.7.1: Document page (week 7-8) (last week) (already in sync)
-  - **[SKIP]** 1.7.2: Document viewer sub-components (week 7-8) (last week) (already in sync)
-  - **[SKIP]** 1.13.1: Signal board page (week 6) (already in sync)
-  - **[SKIP]** 1.13.2: Signal board popin (week 6) (already in sync)
-  - **[SKIP]** [Fix] Add 10 minute countdown to MFA page (last week) (already in sync)
-  - **[SKIP]** [FIX] Update account status error messages in LoginCard (last week) (already in sync)
-  - **[SKIP]** [FIX] Use named constant for MFA timeout in MfaForm (last week) (already in sync)
-  - **[SKIP]** [FIX] Restore missing mandate information in PublicFigureHeader (last week) (already in sync)
-  - **[SKIP]** [FIX] Use French number formatting in TerritorySheetHeader (last week) (already in sync)
-  - **[SKIP]** [FIX] Add GDPR "Standard" mention in TerritorySheetHeader (last week) (already in sync)
-  - **[SKIP]** [FIX] Correct spacing around punctuation in TerritorySheetHeader (last week) (already in sync)
-  - **[SKIP]** [FIX] Fix internal redirect bug for globe website link in TerritorySheetHeader (last week) (already in sync)
-  - **[SKIP]** [FIX] Translate "tender" tag to French in TendersSection (last week) (already in sync)
-  - **[SKIP]** [FIX] Remove unnecessary hardcoded counts in TendersSection (last week) (already in sync)
-  - **[SKIP]** [FIX] Restore missing election list name in ElectionsSection (last week) (already in sync)
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - Skipped
-*No items found in the current week.*
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - Skipped
-*No items found in the current week.*
-
-#### QueueUp Product Board - +0 added, ~0 updated, =5 skipped
-  - **[SKIP]** Define API communication standards (REST structure, request/response format) (already in sync)
-  - **[SKIP]** Core Queue Management Logic (last week) (already in sync)
-  - **[SKIP]** Estimated Wait Time (EWT) & Capacity Logic (already in sync)
-  - **[SKIP]** Customer Dashboard Development (already in sync)
-  - **[SKIP]** Business Dashboard Development (already in sync)
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### Yanthra Product project - +0 added, ~0 updated, =2 skipped
-  - **[SKIP]** Implement User entity and Role enum (Seller, Admin). Login and Register (last week) (already in sync)
-  - **[SKIP]** [Backend] Implement POST/GET/DELETE /ADD /api/v1/machines for new /edit/delete Listings (already in sync)
-
-### V1 - 12:21 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 11     | 14       | 56       |
-
-
-#### StudyReserve Product Board - +1 added, ~0 updated, =30 skipped
-  - **[ADD]** Implement disabled course delete feature - fields set: Status, Week
-  - **[SKIP]** [Admin][Module][Editor] HR insertion adds unintended extra blank line above selected text (last week) (already in sync)
-  - **[SKIP]** [Manager] Post Title allows saving with less than minimum required characters (last week) (already in sync)
-  - **[SKIP]** [Manager][Enrollments] same student can add multiple time in one module (last week) (already in sync)
-  - **[SKIP]** [Manager][Enrollments] without choosing student enroll button appear (last week) (already in sync)
-  - **[SKIP]** [Manager]{Enrollment} Using CVS Student add but not added to module (last week) (already in sync)
-  - **[SKIP]** [Manager] add teachers via CVS show enter module ID (last week) (already in sync)
-  - **[SKIP]** [Manager] manager cant delete the teachers (last week) (already in sync)
-  - **[SKIP]** [Manager]Tag can add 1 Character but not saved (last week) (already in sync)
-  - **[SKIP]** [Manager] Add more than 40 character tags not save (last week) (already in sync)
-  - **[SKIP]** [Teacher] create course 1 character get as a input no validation (last week) (already in sync)
-  - **[SKIP]** [Teacher]  add more than 200 Character form closed unexpectedly (last week) (already in sync)
-  - **[SKIP]** [Manager][Teacher][Admin]Same Bank account and Payment Link can add Multiple time (last week) (already in sync)
-  - **[SKIP]** [Teacher] Create course Cover image can add all file types (last week) (already in sync)
-  - **[SKIP]** [Teacher] Edit title field no validation minimum and maximum  (last week) (already in sync)
-  - **[SKIP]** [Teacher] create module no validation in  title field minimum and maximum (last week) (already in sync)
-  - **[SKIP]** [Teacher] delete module delete button visible not working (last week) (already in sync)
-  - **[SKIP]** [Teacher] Post title field not have validation for the maximum character limit (last week) (already in sync)
-  - **[SKIP]** [Teacher] Add video  no validation update and create  (last week) (already in sync)
-  - **[SKIP]** [Teacher]video watch time limit can add minus or 0 update and create  (last week) (already in sync)
-  - **[SKIP]** [teacher] Create Event No validation  for maximum character for the title (last week) (already in sync)
-  - **[SKIP]** [Teacher] Create Event Take invalid conference link (last week) (already in sync)
-  - **[SKIP]** [Teacher]Create/update assessment  no validation for the maximum character title (last week) (already in sync)
-  - **[SKIP]** [Admin][Create Course] Insert HR adds extra blank line above it (last week) (already in sync)
-  - **[SKIP]** [Admin][Create Course]Insert HR adds extra blank line above it (last week) (already in sync)
-  - **[SKIP]** [Admin][Assessment][Editor] HR insertion adds unintended extra blank line above selected text (last week) (already in sync)
-  - **[SKIP]** [Admin][Event][Editor]HR insertion adds unintended extra blank line above selected text (last week) (already in sync)
-  - **[SKIP]** [Admin][Assessment][Editor] HR insertion adds unintended extra blank line above selected text (last week) (already in sync)
-  - **[SKIP]** [Admin][Video][Editor] HR insertion adds unintended extra blank line above selected text (last week) (already in sync)
-  - **[SKIP]** [Admin][Post][Editor] HR insertion adds unintended extra blank line above selected text (last week) (already in sync)
-  - **[SKIP]** [Admin][Edit Module][Editor] HR insertion adds unintended extra blank line above selected text (last week) (already in sync)
-
-#### StudyQ Product Board - Skipped
-*No items found in the current week.*
-
-#### EarlyEmu - Document Generator - +6 added, ~0 updated, =11 skipped
-  - **[SKIP]** Review and refactor author page code (last week) (already in sync)
-  - **[SKIP]** Rename static page layout component (last week) (already in sync)
-  - **[ADD]** Document version history is not visible - fields set: Status, Week
-  - **[SKIP]** Improve super admin global configs page code (last week) (already in sync)
-  - **[SKIP]** Fact checker JSON format error (last week) (already in sync)
-  - **[SKIP]** Chat in production is broken (last week) (already in sync)
-  - **[SKIP]** Create profile document heading shows as "Untitled" on staging (last week) (already in sync)
-  - **[SKIP]** Add more fields on writing profile list fields (last week) (already in sync)
-  - **[SKIP]** Article generation takes long and then fails (last week) (already in sync)
-  - **[SKIP]** Onboarding Vishal to EffortAgent (last week) (already in sync)
-  - **[ADD]** Cannot create writing profile using large text - fields set: Status, Week
-  - **[ADD]** Fact check results are displayed only after refreshing the page - fields set: Status, Week
-  - **[ADD]** Paraphrasing with v3 writing profile fails - fields set: Status, Week
-  - **[ADD]** Generating a blog with writing profile fails - fields set: Status, Week
-  - **[ADD]** Research on Claude code agent implementation - fields set: Status, Week
-  - **[SKIP]** Alternative for Wise (last week) (already in sync)
-  - **[SKIP]** Verify Stripe payment works on production (last week) (already in sync)
-
-#### hedwige-ui-rewrite - +3 added, ~10 updated, =13 skipped
-  - **[SKIP]** 1.1.3: Activation page (week 8) (last week) (already in sync)
-  - **[UPDATE]** 1.9.2: Home feed (week 2) - changed: Week
-  - **[UPDATE]** 1.9.3: Dashboard orchestrator (Dashboard page) (week 2) - changed: Week
-  - **[UPDATE]** 1.9.4: Dashboard sidebar (week 2) - changed: Week
-  - **[SKIP]** 1.9.5: Dashboard API hooks (week 2) (last week) (already in sync)
-  - **[UPDATE]** 1.14.1: Account page (week 8) (last week) - changed: Status
-  - **[UPDATE]** 1.14.2: FAQ page (week 8) - changed: Status, Week
-  - **[UPDATE]** 1.14.3: Tutorials page (week 8) - changed: Status, Week
-  - **[UPDATE]** 1.9.6: Dashboard config components (week 7) - changed: Week
-  - **[ADD]** 1.2.1: New folder page (week 2-3) - fields set: Status, Week
-  - **[UPDATE]** 1.6.3: Public figure tracker page (week 7) - changed: Week
-  - **[UPDATE]** 1.7.1: Document page (week 7-8) (last week) - changed: Status
-  - **[UPDATE]** 1.7.2: Document viewer sub-components (week 7-8) (last week) - changed: Status
-  - **[ADD]** 1.13.1: Signal board page (week 6) - fields set: Status, Week
-  - **[ADD]** 1.13.2: Signal board popin (week 6) - fields set: Status, Week
-  - **[SKIP]** [Fix] Add 10 minute countdown to MFA page (last week) (already in sync)
-  - **[SKIP]** [FIX] Update account status error messages in LoginCard (last week) (already in sync)
-  - **[SKIP]** [FIX] Use named constant for MFA timeout in MfaForm (last week) (already in sync)
-  - **[SKIP]** [FIX] Restore missing mandate information in PublicFigureHeader (last week) (already in sync)
-  - **[SKIP]** [FIX] Use French number formatting in TerritorySheetHeader (last week) (already in sync)
-  - **[SKIP]** [FIX] Add GDPR "Standard" mention in TerritorySheetHeader (last week) (already in sync)
-  - **[SKIP]** [FIX] Correct spacing around punctuation in TerritorySheetHeader (last week) (already in sync)
-  - **[SKIP]** [FIX] Fix internal redirect bug for globe website link in TerritorySheetHeader (last week) (already in sync)
-  - **[SKIP]** [FIX] Translate "tender" tag to French in TendersSection (last week) (already in sync)
-  - **[SKIP]** [FIX] Remove unnecessary hardcoded counts in TendersSection (last week) (already in sync)
-  - **[SKIP]** [FIX] Restore missing election list name in ElectionsSection (last week) (already in sync)
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - Skipped
-*No items found in the current week.*
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - Skipped
-*No items found in the current week.*
-
-#### QueueUp Product Board - +0 added, ~4 updated, =1 skipped
-  - **[UPDATE]** Define API communication standards (REST structure, request/response format) - changed: Week
-  - **[SKIP]** Core Queue Management Logic (last week) (already in sync)
-  - **[UPDATE]** Estimated Wait Time (EWT) & Capacity Logic - changed: Week
-  - **[UPDATE]** Customer Dashboard Development - changed: Week
-  - **[UPDATE]** Business Dashboard Development - changed: Week
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### Yanthra Product project - +1 added, ~0 updated, =1 skipped
-  - **[SKIP]** Implement User entity and Role enum (Seller, Admin). Login and Register (last week) (already in sync)
-  - **[ADD]** [Backend] Implement POST/GET/DELETE /ADD /api/v1/machines for new /edit/delete Listings - fields set: Status, Week, Start date, End date
 
