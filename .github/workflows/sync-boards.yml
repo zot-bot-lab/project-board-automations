@@ -32,20 +32,20 @@ jobs:
       - name: Run Sync Script
         shell: pwsh
         run: |
-          $args = @()
+          $syncArgs = @()
           if ("${{ github.event_name }}" -eq "workflow_dispatch") {
             if ("${{ github.event.inputs.sync_type }}" -eq "Full") {
-              $args += "-FullSync"
+              $syncArgs += "-FullSync"
             }
           } elseif ("${{ github.event_name }}" -eq "schedule") {
             # Saturday runs are Full Sync
             if ((Get-Date).DayOfWeek -eq "Saturday") {
-              $args += "-FullSync"
+              $syncArgs += "-FullSync"
             }
           }
           
-          Write-Host "Executing sync with args: $args"
-          ./scripts/sync-boards/sync-boards.ps1 $args
+          Write-Host "Executing sync with args: $syncArgs"
+          ./scripts/sync-boards/sync-boards.ps1 @syncArgs
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 

@@ -522,6 +522,9 @@ for ($bi = 0; $bi -lt $config.secondaryBoards.Count; $bi++) {
             if (($isCurrentWeek -or $isLastWeek -or $isAlreadyInMain) -and $item.status -in $ValidStatuses) {
                 if ($item.url) {
                     $item.isLastWeek = $isLastWeek
+                    # Items included only because they're already on the main board (not in current/last week)
+                    # should NOT have their iteration updated
+                    $item | Add-Member -NotePropertyName 'isOrphan' -NotePropertyValue (-not $isCurrentWeek -and -not $isLastWeek -and $isAlreadyInMain) -Force
                     $itemsToSync.Add($item)
                 }
             }
@@ -566,7 +569,8 @@ for ($bi = 0; $bi -lt $config.secondaryBoards.Count; $bi++) {
         
         # 2. Iteration - only sync the Week field in normal (non-FullSync) mode.
         # In -FullSync we are importing tickets, not re-assigning them to sprints.
-        if (-not $FullSync) {
+        # Orphan items (included only because they're already on the main board) also skip iteration updates.
+        if (-not $FullSync -and -not $sItem.isOrphan) {
             $sTargetIterationId = $null
             if ($sItem.week -and $sItem.week.startDate) {
                 $sStart = [datetime]::Parse($sItem.week.startDate)
