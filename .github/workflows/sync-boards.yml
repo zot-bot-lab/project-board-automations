@@ -63,6 +63,6 @@ jobs:
             git add changelogs/sync-boards.md
           fi
           git add scripts/sync-boards/sync-config.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "chore: auto-update board sync data"
+          git diff --staged --quiet || git commit -m "chore: auto-update board sync data"
           git pull --rebase origin main
           git push
