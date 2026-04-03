@@ -30,21 +30,26 @@ jobs:
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Run Sync Script
+        id: sync
         shell: pwsh
         run: |
           $syncArgs = @()
+          $isFullSync = $false
           if ("${{ github.event_name }}" -eq "workflow_dispatch") {
             if ("${{ github.event.inputs.sync_type }}" -eq "Full") {
               $syncArgs += "-FullSync"
+              $isFullSync = $true
             }
           } elseif ("${{ github.event_name }}" -eq "schedule") {
             # Saturday runs are Full Sync
             if ((Get-Date).DayOfWeek -eq "Saturday") {
               $syncArgs += "-FullSync"
+              $isFullSync = $true
             }
           }
           
           Write-Host "Executing sync with args: $syncArgs"
+          echo "is_full_sync=$($isFullSync.ToString().ToLower())" >> $env:GITHUB_OUTPUT
           ./scripts/sync-boards/sync-boards.ps1 @syncArgs
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
@@ -53,7 +58,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add changelogs/sync-boards.md scripts/sync-boards/sync-config.json
+          # Only stage the changelog for regular syncs; FullSync skips it
+          if [ "${{ steps.sync.outputs.is_full_sync }}" != "true" ]; then
+            git add changelogs/sync-boards.md
+          fi
+          git add scripts/sync-boards/sync-config.json
           git diff --quiet && git diff --staged --quiet || git commit -m "chore: auto-update board sync data"
           git pull --rebase origin main
           git push
