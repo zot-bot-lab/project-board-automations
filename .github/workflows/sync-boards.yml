@@ -24,7 +24,7 @@ jobs:
       TZ: "Asia/Colombo"
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           # Use a Personal Access Token with org admin / project write permissions.
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
