@@ -2,6 +2,64 @@
 
 ## 2026-04-06
 
+### V2 - 05:32 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 0     | 7       | 1118       |
+
+
+#### StudyReserve Product Board - Skipped
+*No items found in the current week.*
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +0 added, ~3 updated, =616 skipped
+  - **[UPDATE]** Audience from the writing profile is getting auto filled on doc gen modal (stop it) - changed: Start date, End date
+  - **[UPDATE]** Fact check right after document geneneration - changed: Start date, End date
+  - **[UPDATE]** Improve the fact check to use the latest information - changed: Start date, End date
+
+#### UnbrandedLK Product Board - +0 added, ~1 updated, =43 skipped
+  - **[UPDATE]** Rollout release branch strategy - changed: Status: In review
+
+#### hedwige-ui-rewrite - +0 added, ~0 updated, =103 skipped
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - +0 added, ~0 updated, =306 skipped
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - Skipped
+*No items found in the current week.*
+
+#### BYM Project Board - Skipped
+*No items found in the current week.*
+
+#### QueueUp Product Board - +0 added, ~0 updated, =16 skipped
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### Yanthra Product project - +0 added, ~0 updated, =12 skipped
+
+#### ZOT Sales Board - +0 added, ~3 updated, =22 skipped
+  - **[UPDATE]** QueueUp Pitch to Auto Miraj - changed: Status: Ready
+  - **[UPDATE]** Yanthra Demo to prospects - changed: Status: Ready
+  - **[UPDATE]** [Bhagya] Ambassador program - changed: Status: Ready
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
 ### V1 - 12:36 PM
 
 | Added | Updated | Skipped |
