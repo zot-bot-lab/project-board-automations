@@ -1,5 +1,67 @@
 # Sync Boards - Run Log
 
+## 2026-04-13
+
+### V1 - 12:53 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 0     | 0       | 0       |
+
+
+#### StudyReserve Product Board - Skipped
+*No items found in the current week.*
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - Skipped
+*No items found in the current week.*
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### hedwige-ui-rewrite - Skipped
+*No items found in the current week.*
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - Skipped
+*No items found in the current week.*
+
+#### BYM Project Board - Skipped
+*No items found in the current week.*
+
+#### QueueUp Product Board - Skipped
+*No items found in the current week.*
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### Yanthra Product project - Skipped
+*No items found in the current week.*
+
+#### ZOT Sales Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
+---
+
 ## 2026-04-10
 
 ### V2 - 05:33 PM
@@ -1210,266 +1272,6 @@
   - **[SKIP]** implement marketplace side bar filter location and machine type (last week) (already in sync)
   - **[ADD]** Implement location management in platform setting page - fields set: Status, Week, Start date, End date
   - **[ADD]** Implement forgot password  page - fields set: Status, Week, Start date, End date
-
-#### ZOT Sales Board - Skipped
-*No items found in the current week.*
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
----
-
-## 2026-03-27
-
-### V2 - 05:29 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 1     | 2       | 89       |
-
-
-#### StudyReserve Product Board - +0 added, ~0 updated, =10 skipped
-  - **[SKIP]** Implement Student delete option to manager and admin (last week) (already in sync)
-  - **[SKIP]** Implement disabled course delete feature (last week) (already in sync)
-  - **[SKIP]** [Teacher] Download Enrolled student list (last week) (already in sync)
-  - **[SKIP]** Document where it can be improvements in the UI and code (last week) (already in sync)
-  - **[SKIP]** Course -> New Registered Students, New Module Enrolments with module (Payments) (already in sync)
-  - **[SKIP]** Admin dashboard with a separate page only for admins (already in sync)
-  - **[SKIP]** Address PR comments in SR admin and SR API (already in sync)
-  - **[SKIP]** Admin dashboard feature (already in sync)
-  - **[SKIP]** Add pagination to API calls (already in sync)
-  - **[SKIP]** Add paginated search functionality (already in sync)
-
-#### StudyQ Product Board - +0 added, ~0 updated, =3 skipped
-  - **[SKIP]** Safe area issue (last week) (already in sync)
-  - **[SKIP]** Starting trial issue (last week) (already in sync)
-  - **[SKIP]** Check why apple review got rejected (already in sync)
-
-#### EarlyEmu - Document Generator - +0 added, ~0 updated, =16 skipped
-  - **[SKIP]** Writing profile selector for paraphrase is not intuitive to use (already in sync)
-  - **[SKIP]** Hide research agent comments from the public (already in sync)
-  - **[SKIP]** Research on Claude code agent implementation (already in sync)
-  - **[SKIP]** Improve research agent UI (already in sync)
-  - **[SKIP]** Paraphrasing with v1 writing profile inserts an empty text (already in sync)
-  - **[SKIP]** Paraphrasing with v3 writing profile fails (last week) (already in sync)
-  - **[SKIP]** Document version history is not visible (last week) (already in sync)
-  - **[SKIP]** Fix heading invisibility on published articles (already in sync)
-  - **[SKIP]** Increase max output tokens limit (last week) (already in sync)
-  - **[SKIP]** Cannot create writing profile using large text (last week) (already in sync)
-  - **[SKIP]** Optimize fact checker (already in sync)
-  - **[SKIP]** Optimize paraphrase (already in sync)
-  - **[SKIP]** Generating a blog with writing profile fails (last week) (already in sync)
-  - **[SKIP]** Optimize document generation (already in sync)
-  - **[SKIP]** Fact checker JSON format error (last week) (already in sync)
-  - **[SKIP]** Fact check results are displayed only after refreshing the page (already in sync)
-
-#### hedwige-ui-rewrite - +0 added, ~0 updated, =27 skipped
-  - **[SKIP]** 1.9.2: Home feed (week 2) (last week) (already in sync)
-  - **[SKIP]** 1.9.3: Dashboard orchestrator (Dashboard page) (week 2) (last week) (already in sync)
-  - **[SKIP]** 1.9.4: Dashboard sidebar (week 2) (last week) (already in sync)
-  - **[SKIP]** 1.14.1: Account page (week 8) (last week) (already in sync)
-  - **[SKIP]** 1.14.2: FAQ page (week 8) (last week) (already in sync)
-  - **[SKIP]** 1.14.3: Tutorials page (week 8) (last week) (already in sync)
-  - **[SKIP]** 1.9.6: Dashboard config components (week 7) (last week) (already in sync)
-  - **[SKIP]** 1.2.1: New folder page (week 2-3) (last week) (already in sync)
-  - **[SKIP]** 1.2.2: Folder creation components (decomposed) (week 2-3) (last week) (already in sync)
-  - **[SKIP]** 1.3.1: Questions page (week 3) (already in sync)
-  - **[SKIP]** 1.3.2: Questions items (week 3) (already in sync)
-  - **[SKIP]** 1.3.3: Amendments page (week 3-4) (already in sync)
-  - **[SKIP]** 1.3.4: Amendments items (week 3-4) (already in sync)
-  - **[SKIP]** 1.3.5: Legislative dossiers (Folders) page (week 4) (already in sync)
-  - **[SKIP]** 1.6.3: Public figure tracker page (week 7) (already in sync)
-  - **[SKIP]** 1.8.1: Alerts page (week 8) (last week) (already in sync)
-  - **[SKIP]** 1.8.2: Delete alert page (week 8) (last week) (already in sync)
-  - **[SKIP]** 1.8.3: Delete alert search page (week 8) (last week) (already in sync)
-  - **[SKIP]** 1.10.1: Feed component (decomposed into 6) (week 3) (last week) (already in sync)
-  - **[SKIP]** 1.10.2: Feed item renderers (week 3-4) (last week) (already in sync)
-  - **[SKIP]** 1.11.2: Dashboard charts (all 6) (week 4-5) (already in sync)
-  - **[SKIP]** 1.12.1: Local Context (decomposed) (week 5) (already in sync)
-  - **[SKIP]** 1.12.2: Kanban board (3 components + @dnd-kit) (week 5) (already in sync)
-  - **[SKIP]** 1.13.1: Signal board page (week 6) (already in sync)
-  - **[SKIP]** 1.13.2: Signal board popin (week 6) (already in sync)
-  - **[SKIP]** 2.1.8: Global error boundary (week 9-10) (last week) (already in sync)
-  - **[SKIP]** [FIX] Make Suivre mes dossiers section in home page scrollable (already in sync)
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - +0 added, ~0 updated, =4 skipped
-  - **[SKIP]** show the uploaded images without the link (last week) (already in sync)
-  - **[SKIP]** show the upcoming counts in the dashboard (last week) (already in sync)
-  - **[SKIP]** Improve AI summary result (already in sync)
-  - **[SKIP]** APP UI changes (already in sync)
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - +1 added, ~2 updated, =6 skipped
-  - **[SKIP]** Implement global feed (last week) (already in sync)
-  - **[SKIP]** Implement user feed (last week) (already in sync)
-  - **[SKIP]** Update workout plans and exercises to have reps and sets (last week) (already in sync)
-  - **[SKIP]** PDF upload functionality for meal plan (last week) (already in sync)
-  - **[SKIP]** Show user’s height, weight on user tab’s topic (last week) (already in sync)
-  - **[SKIP]** Look into admin chat issues (last week) (already in sync)
-  - **[UPDATE]** Body weight trendline (last week) - changed: Priority, Start date, End date
-  - **[UPDATE]** Coach should be able to add PDFs for workout (last week) - changed: Priority, Start date, End date
-  - **[ADD]** Investigate current loading issue - fields set: Status, Week
-
-#### QueueUp Product Board - +0 added, ~0 updated, =5 skipped
-  - **[SKIP]** Define API communication standards (REST structure, request/response format) (already in sync)
-  - **[SKIP]** Estimated Wait Time (EWT) & Capacity Logic (last week) (already in sync)
-  - **[SKIP]** Customer Dashboard Development (already in sync)
-  - **[SKIP]** Business Dashboard Development (already in sync)
-  - **[SKIP]** Notification System Implementation (already in sync)
-
-#### Invoyze Product Board - +0 added, ~0 updated, =14 skipped
-  - **[SKIP]** Task Set 14 — Frontend Bookkeeping Feature [FE] (already in sync)
-  - **[SKIP]** Wave 2: Books Foundation & First-Run Experience [FE] (already in sync)
-  - **[SKIP]** Team Module (already in sync)
-  - **[SKIP]** Task Set 8 — Bookkeeping Module [BE] (already in sync)
-  - **[SKIP]** chore(bookkeeping): non-functional improvements backlog from PR #60 review (already in sync)
-  - **[SKIP]** Wave 1: Shared Infrastructure [FE] (last week) (already in sync)
-  - **[SKIP]** Wave 3a: Primary Workflows [FE] (already in sync)
-  - **[SKIP]** Wave 3b: Dependent Workflows [FE] (already in sync)
-  - **[SKIP]** Wave 4: Reporting and Controls [FE] (already in sync)
-  - **[SKIP]** feat(bookkeeping): build shared TS-0 frontend infrastructure (last week) (already in sync)
-  - **[SKIP]** Frontend Organization Creation (last week) (already in sync)
-  - **[SKIP]** Super Admin Dashboard for Testing (already in sync)
-  - **[SKIP]** Implement System Accounts Feature [BE/FE/DB] (already in sync)
-  - **[SKIP]** feat: Migrate journal attachments to S3/GCS storage (already in sync)
-
-#### Yanthra Product project - +0 added, ~0 updated, =4 skipped
-  - **[SKIP]** [Backend] Implement POST/GET/DELETE /ADD /api/v1/machines for new /edit/delete Listings (last week) (already in sync)
-  - **[SKIP]** [Backend] Create User Management API for Admins Managements (already in sync)
-  - **[SKIP]** implement platform setting page (already in sync)
-  - **[SKIP]** implement marketplace side bar filter location and machine type (already in sync)
-
-#### ZOT Sales Board - Skipped
-*No items found in the current week.*
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
-### V1 - 12:12 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 2     | 11       | 70       |
-
-
-#### StudyReserve Product Board - +0 added, ~2 updated, =8 skipped
-  - **[SKIP]** Implement Student delete option to manager and admin (last week) (already in sync)
-  - **[SKIP]** Implement disabled course delete feature (last week) (already in sync)
-  - **[SKIP]** [Teacher] Download Enrolled student list (last week) (already in sync)
-  - **[SKIP]** Document where it can be improvements in the UI and code (last week) (already in sync)
-  - **[SKIP]** Course -> New Registered Students, New Module Enrolments with module (Payments) (already in sync)
-  - **[SKIP]** Admin dashboard with a separate page only for admins (already in sync)
-  - **[SKIP]** Address PR comments in SR admin and SR API (already in sync)
-  - **[SKIP]** Admin dashboard feature (already in sync)
-  - **[UPDATE]** Add pagination to API calls - changed: Start date
-  - **[UPDATE]** Add paginated search functionality - changed: Start date
-
-#### StudyQ Product Board - +0 added, ~0 updated, =3 skipped
-  - **[SKIP]** Safe area issue (last week) (already in sync)
-  - **[SKIP]** Starting trial issue (last week) (already in sync)
-  - **[SKIP]** Check why apple review got rejected (already in sync)
-
-#### EarlyEmu - Document Generator - +0 added, ~4 updated, =12 skipped
-  - **[UPDATE]** Writing profile selector for paraphrase is not intuitive to use - changed: Status
-  - **[UPDATE]** Hide research agent comments from the public - changed: Status
-  - **[SKIP]** Research on Claude code agent implementation (already in sync)
-  - **[SKIP]** Improve research agent UI (already in sync)
-  - **[SKIP]** Paraphrasing with v1 writing profile inserts an empty text (already in sync)
-  - **[SKIP]** Paraphrasing with v3 writing profile fails (last week) (already in sync)
-  - **[SKIP]** Document version history is not visible (last week) (already in sync)
-  - **[SKIP]** Fix heading invisibility on published articles (already in sync)
-  - **[SKIP]** Increase max output tokens limit (last week) (already in sync)
-  - **[SKIP]** Cannot create writing profile using large text (last week) (already in sync)
-  - **[UPDATE]** Optimize fact checker - changed: Status
-  - **[UPDATE]** Optimize paraphrase - changed: Status
-  - **[SKIP]** Generating a blog with writing profile fails (last week) (already in sync)
-  - **[SKIP]** Optimize document generation (already in sync)
-  - **[SKIP]** Fact checker JSON format error (last week) (already in sync)
-  - **[SKIP]** Fact check results are displayed only after refreshing the page (already in sync)
-
-#### hedwige-ui-rewrite - +0 added, ~5 updated, =22 skipped
-  - **[SKIP]** 1.9.2: Home feed (week 2) (last week) (already in sync)
-  - **[SKIP]** 1.9.3: Dashboard orchestrator (Dashboard page) (week 2) (last week) (already in sync)
-  - **[SKIP]** 1.9.4: Dashboard sidebar (week 2) (last week) (already in sync)
-  - **[SKIP]** 1.14.1: Account page (week 8) (last week) (already in sync)
-  - **[SKIP]** 1.14.2: FAQ page (week 8) (last week) (already in sync)
-  - **[SKIP]** 1.14.3: Tutorials page (week 8) (last week) (already in sync)
-  - **[SKIP]** 1.9.6: Dashboard config components (week 7) (last week) (already in sync)
-  - **[SKIP]** 1.2.1: New folder page (week 2-3) (last week) (already in sync)
-  - **[SKIP]** 1.2.2: Folder creation components (decomposed) (week 2-3) (last week) (already in sync)
-  - **[SKIP]** 1.3.1: Questions page (week 3) (already in sync)
-  - **[SKIP]** 1.3.2: Questions items (week 3) (already in sync)
-  - **[SKIP]** 1.3.3: Amendments page (week 3-4) (already in sync)
-  - **[SKIP]** 1.3.4: Amendments items (week 3-4) (already in sync)
-  - **[SKIP]** 1.3.5: Legislative dossiers (Folders) page (week 4) (already in sync)
-  - **[SKIP]** 1.6.3: Public figure tracker page (week 7) (already in sync)
-  - **[SKIP]** 1.8.1: Alerts page (week 8) (last week) (already in sync)
-  - **[SKIP]** 1.8.2: Delete alert page (week 8) (last week) (already in sync)
-  - **[SKIP]** 1.8.3: Delete alert search page (week 8) (last week) (already in sync)
-  - **[SKIP]** 1.10.1: Feed component (decomposed into 6) (week 3) (last week) (already in sync)
-  - **[SKIP]** 1.10.2: Feed item renderers (week 3-4) (last week) (already in sync)
-  - **[SKIP]** 1.11.2: Dashboard charts (all 6) (week 4-5) (already in sync)
-  - **[UPDATE]** 1.12.1: Local Context (decomposed) (week 5) - changed: Status
-  - **[UPDATE]** 1.12.2: Kanban board (3 components + @dnd-kit) (week 5) - changed: Status
-  - **[UPDATE]** 1.13.1: Signal board page (week 6) - changed: Status
-  - **[UPDATE]** 1.13.2: Signal board popin (week 6) - changed: Status
-  - **[SKIP]** 2.1.8: Global error boundary (week 9-10) (last week) (already in sync)
-  - **[UPDATE]** [FIX] Make Suivre mes dossiers section in home page scrollable - changed: Status
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - +2 added, ~0 updated, =2 skipped
-  - **[SKIP]** show the uploaded images without the link (last week) (already in sync)
-  - **[SKIP]** show the upcoming counts in the dashboard (last week) (already in sync)
-  - **[ADD]** Improve AI summary result - fields set: Status, Week
-  - **[ADD]** APP UI changes - fields set: Status, Week
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - Skipped
-*No items found in the current week.*
-
-#### QueueUp Product Board - +0 added, ~0 updated, =5 skipped
-  - **[SKIP]** Define API communication standards (REST structure, request/response format) (already in sync)
-  - **[SKIP]** Estimated Wait Time (EWT) & Capacity Logic (last week) (already in sync)
-  - **[SKIP]** Customer Dashboard Development (already in sync)
-  - **[SKIP]** Business Dashboard Development (already in sync)
-  - **[SKIP]** Notification System Implementation (already in sync)
-
-#### Invoyze Product Board - +0 added, ~0 updated, =14 skipped
-  - **[SKIP]** Task Set 14 — Frontend Bookkeeping Feature [FE] (already in sync)
-  - **[SKIP]** Wave 2: Books Foundation & First-Run Experience [FE] (already in sync)
-  - **[SKIP]** Team Module (already in sync)
-  - **[SKIP]** Task Set 8 — Bookkeeping Module [BE] (already in sync)
-  - **[SKIP]** chore(bookkeeping): non-functional improvements backlog from PR #60 review (already in sync)
-  - **[SKIP]** Wave 1: Shared Infrastructure [FE] (last week) (already in sync)
-  - **[SKIP]** Wave 3a: Primary Workflows [FE] (already in sync)
-  - **[SKIP]** Wave 3b: Dependent Workflows [FE] (already in sync)
-  - **[SKIP]** Wave 4: Reporting and Controls [FE] (already in sync)
-  - **[SKIP]** feat(bookkeeping): build shared TS-0 frontend infrastructure (last week) (already in sync)
-  - **[SKIP]** Frontend Organization Creation (last week) (already in sync)
-  - **[SKIP]** Super Admin Dashboard for Testing (already in sync)
-  - **[SKIP]** Implement System Accounts Feature [BE/FE/DB] (already in sync)
-  - **[SKIP]** feat: Migrate journal attachments to S3/GCS storage (already in sync)
-
-#### Yanthra Product project - +0 added, ~0 updated, =4 skipped
-  - **[SKIP]** [Backend] Implement POST/GET/DELETE /ADD /api/v1/machines for new /edit/delete Listings (last week) (already in sync)
-  - **[SKIP]** [Backend] Create User Management API for Admins Managements (already in sync)
-  - **[SKIP]** implement platform setting page (already in sync)
-  - **[SKIP]** implement marketplace side bar filter location and machine type (already in sync)
 
 #### ZOT Sales Board - Skipped
 *No items found in the current week.*
