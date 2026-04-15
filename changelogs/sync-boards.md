@@ -1,5 +1,83 @@
 # Sync Boards - Run Log
 
+## 2026-04-15
+
+### V1 - 12:36 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 5     | 16       | 801       |
+
+
+#### StudyReserve Product Board - Skipped
+*No items found in the current week.*
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +3 added, ~7 updated, =614 skipped
+  - **[UPDATE]** Optimize paraphrase - changed: Status: In review, Week
+  - **[UPDATE]** Summarize V3 profile - changed: Week
+  - **[ADD]** Don't show the full JSON on document metadata at once - fields set: Status: Ready, Week
+  - **[UPDATE]** Audience from the writing profile is getting auto filled on doc gen modal (stop it) - changed: Week
+  - **[UPDATE]** Fact check right after document geneneration - changed: Week
+  - **[UPDATE]** Improve the fact check to use the latest information - changed: Week
+  - **[UPDATE]** Free tools - Fact checker - changed: Week
+  - **[UPDATE]** Free tools - Document Generator - changed: Week
+  - **[ADD]** Improve content feed UI - fields set: Status: Ready, Week
+  - **[ADD]** Find alternative images for agents - fields set: Status: Ready, Week
+
+#### UnbrandedLK Product Board - +0 added, ~0 updated, =45 skipped
+
+#### hedwige-ui-rewrite - +0 added, ~8 updated, =98 skipped
+  - **[UPDATE]** 1.15.1: Remaining small pages (week 8) (last week) - changed: Status: In review
+  - **[UPDATE]** 1.15.2: Selects/misc components (week 8) (last week) - changed: Status: In review
+  - **[UPDATE]** 1.15.3: Track A bug fixes + test gap coverage (week 8) - changed: Status: Ready, Week
+  - **[UPDATE]** 1.15.4: Track B bug fixes + test gap coverage (week 8) - changed: Status: Ready, Week
+  - **[UPDATE]** 2.1.2: Port P0/P1 Vue changes (week 9-10) - changed: Status: In review, Week
+  - **[UPDATE]** 2.1.3: Full integration testing (week 9-10) - changed: Status: Ready, Week
+  - **[UPDATE]** 2.1.4: E2E test suite (week 9-10) - changed: Status: Ready, Week
+  - **[UPDATE]** 2.1.6: Responsive testing (week 9-10) - changed: Week
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - Skipped
+*No items found in the current week.*
+
+#### BYM Project Board - +0 added, ~1 updated, =28 skipped
+  - **[UPDATE]** Integrate notifications feature to the system - changed: Week
+
+#### QueueUp Product Board - +2 added, ~0 updated, =16 skipped
+  - **[ADD]** [TEST] Writing Unit Tests for the backend Code. - fields set: Status: In progress, Week, Start date, End date
+  - **[ADD]** UI Improvements - fields set: Status: Ready, Week, Start date, End date
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### Yanthra Product project - Skipped
+*No items found in the current week.*
+
+#### ZOT Sales Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
+---
+
 ## 2026-04-14
 
 ### V2 - 05:41 PM
@@ -1128,148 +1206,6 @@
 #### Yanthra Product project - +0 added, ~0 updated, =5 skipped
 
 #### ZOT Sales Board - +0 added, ~0 updated, =2 skipped
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
----
-
-## 2026-03-31
-
-### V2 - 05:34 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 0     | 0       | 55       |
-
-
-#### StudyReserve Product Board - +0 added, ~0 updated, =10 skipped
-
-#### StudyQ Product Board - Skipped
-*No items found in the current week.*
-
-#### EarlyEmu - Document Generator - +0 added, ~0 updated, =11 skipped
-
-#### hedwige-ui-rewrite - +0 added, ~0 updated, =14 skipped
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - +0 added, ~0 updated, =2 skipped
-
-#### Lexigram Product Board - +0 added, ~0 updated, =1 skipped
-
-#### Lexigram Marketing Board - +0 added, ~0 updated, =3 skipped
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - Skipped
-*No items found in the current week.*
-
-#### QueueUp Product Board - +0 added, ~0 updated, =7 skipped
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### Yanthra Product project - +0 added, ~0 updated, =5 skipped
-
-#### ZOT Sales Board - +0 added, ~0 updated, =2 skipped
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
-### V1 - 12:16 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 3     | 4       | 43       |
-
-
-#### StudyReserve Product Board - +0 added, ~0 updated, =9 skipped
-  - **[SKIP]** Course -> New Registered Students, New Module Enrolments with module (Payments) (last week) (already in sync)
-  - **[SKIP]** Admin dashboard with a separate page only for admins (last week) (already in sync)
-  - **[SKIP]** Address PR comments in SR admin and SR API (last week) (already in sync)
-  - **[SKIP]** Admin dashboard feature (last week) (already in sync)
-  - **[SKIP]** Add pagination to API calls (already in sync)
-  - **[SKIP]** Add paginated search functionality (already in sync)
-  - **[SKIP]** Sort courses from teacher name when paginating the response (already in sync)
-  - **[SKIP]** Get the total value from the module's amount for stats (already in sync)
-  - **[SKIP]** Revert pagination for Courses endpoints (last week) (already in sync)
-
-#### StudyQ Product Board - Skipped
-*No items found in the current week.*
-
-#### EarlyEmu - Document Generator - +1 added, ~1 updated, =9 skipped
-  - **[ADD]** Summarize V3 profile - fields set: Status, Week, Start date, End date
-  - **[UPDATE]** Optimize fact checker - changed: Status
-  - **[SKIP]** Hide research agent comments from the public (already in sync)
-  - **[SKIP]** Research on Claude code agent implementation (last week) (already in sync)
-  - **[SKIP]** Improve research agent UI (last week) (already in sync)
-  - **[SKIP]** Paraphrasing with v1 writing profile inserts an empty text (last week) (already in sync)
-  - **[SKIP]** Fix heading invisibility on published articles (last week) (already in sync)
-  - **[SKIP]** Optimize paraphrase (already in sync)
-  - **[SKIP]** Optimize document generation (last week) (already in sync)
-  - **[SKIP]** Fact check results are displayed only after refreshing the page (last week) (already in sync)
-  - **[SKIP]** Writing profile selector for paraphrase is not intuitive to use (already in sync)
-
-#### hedwige-ui-rewrite - +0 added, ~1 updated, =13 skipped
-  - **[SKIP]** 1.3.1: Questions page (week 3) (last week) (already in sync)
-  - **[SKIP]** 1.3.2: Questions items (week 3) (already in sync)
-  - **[SKIP]** 1.3.3: Amendments page (week 3-4) (last week) (already in sync)
-  - **[SKIP]** 1.3.4: Amendments items (week 3-4) (already in sync)
-  - **[SKIP]** 1.3.5: Legislative dossiers (Folders) page (week 4) (last week) (already in sync)
-  - **[UPDATE]** 1.6.3: Public figure tracker page (week 7) - changed: Status
-  - **[SKIP]** 1.8.4: Alert creation components (alertCreate, alertCreateAdvanced) (week 7) (already in sync)
-  - **[SKIP]** 1.11.2: Dashboard charts (all 6) (week 4-5) (already in sync)
-  - **[SKIP]** 1.12.1: Local Context (decomposed) (week 5) (last week) (already in sync)
-  - **[SKIP]** 1.12.2: Kanban board (3 components + @dnd-kit) (week 5) (already in sync)
-  - **[SKIP]** 1.13.1: Signal board page (week 6) (already in sync)
-  - **[SKIP]** 1.13.2: Signal board popin (week 6) (already in sync)
-  - **[SKIP]** 2.1.8: Global error boundary (week 9-10) (last week) (already in sync)
-  - **[SKIP]** [FIX] Make Suivre mes dossiers section in home page scrollable (last week) (already in sync)
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - +0 added, ~0 updated, =2 skipped
-  - **[SKIP]** Improve AI summary result (last week) (already in sync)
-  - **[SKIP]** APP UI changes (already in sync)
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - Skipped
-*No items found in the current week.*
-
-#### QueueUp Product Board - +0 added, ~2 updated, =5 skipped
-  - **[SKIP]** Define API communication standards (REST structure, request/response format) (already in sync)
-  - **[SKIP]** Customer Dashboard Development (last week) (already in sync)
-  - **[SKIP]** Business Dashboard Development (last week) (already in sync)
-  - **[SKIP]** Notification System Implementation (last week) (already in sync)
-  - **[SKIP]** Analytics & Reporting (Basic) (already in sync)
-  - **[UPDATE]** Mobile Navigation Redesign - changed: Status
-  - **[UPDATE]** Desktop UI Layout Redesign - changed: Status
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### Yanthra Product project - +0 added, ~0 updated, =5 skipped
-  - **[SKIP]** [Backend] Create User Management API for Admins Managements (last week) (already in sync)
-  - **[SKIP]** implement platform setting page (last week) (already in sync)
-  - **[SKIP]** implement marketplace side bar filter location and machine type (last week) (already in sync)
-  - **[SKIP]** Implement location management in platform setting page (already in sync)
-  - **[SKIP]** Implement forgot password  page (already in sync)
-
-#### ZOT Sales Board - +2 added, ~0 updated, =0 skipped
-  - **[ADD]** CareJetty hardware team - fields set: Status, Week, Start date, End date
-  - **[ADD]** Codevus projects - fields set: Status, Week, Start date, End date
 
 #### ZOT Marketing Board - Skipped
 *No items found in the current week.*
