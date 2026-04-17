@@ -2,6 +2,58 @@
 
 ## 2026-04-17
 
+### V2 - 05:37 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 0     | 1       | 867       |
+
+
+#### StudyReserve Product Board - Skipped
+*No items found in the current week.*
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +0 added, ~0 updated, =624 skipped
+
+#### UnbrandedLK Product Board - +0 added, ~1 updated, =44 skipped
+  - **[UPDATE]** Tryout PgBouncer in the dev environment (last week) - changed: Status: In progress
+
+#### hedwige-ui-rewrite - +0 added, ~0 updated, =107 skipped
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - Skipped
+*No items found in the current week.*
+
+#### BYM Project Board - +0 added, ~0 updated, =29 skipped
+
+#### QueueUp Product Board - +0 added, ~0 updated, =18 skipped
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### Yanthra Product project - +0 added, ~0 updated, =19 skipped
+
+#### ZOT Sales Board - +0 added, ~0 updated, =26 skipped
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
 ### V1 - 12:38 PM
 
 | Added | Updated | Skipped |
