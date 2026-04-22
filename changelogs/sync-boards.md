@@ -1,5 +1,67 @@
 # Sync Boards - Run Log
 
+## 2026-04-22
+
+### V1 - 12:39 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 2     | 5       | 876       |
+
+
+#### StudyReserve Product Board - Skipped
+*No items found in the current week.*
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +2 added, ~2 updated, =624 skipped
+  - **[UPDATE]** Summarize V3 profile - changed: Week
+  - **[UPDATE]** Optimize paraphrase - changed: Week
+  - **[ADD]** Free tools - allow every new user generate a document for free - fields set: Status: Ready, Week
+  - **[ADD]** Research: Karpathy's LLM Wiki - fields set: Status: In progress, Week
+
+#### UnbrandedLK Product Board - +0 added, ~1 updated, =46 skipped
+  - **[UPDATE]** [Eclipse Che] Fix: IDE won't startup - changed: Start date, End date
+
+#### hedwige-ui-rewrite - +0 added, ~0 updated, =107 skipped
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - Skipped
+*No items found in the current week.*
+
+#### BYM Project Board - +0 added, ~0 updated, =29 skipped
+
+#### QueueUp Product Board - +0 added, ~1 updated, =18 skipped
+  - **[UPDATE]** [FEATURE] Join to the queue using QR. - changed: Status: In progress
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### Yanthra Product project - +0 added, ~1 updated, =25 skipped
+  - **[UPDATE]** bug/fix home search box - changed: Status: In progress
+
+#### ZOT Sales Board - +0 added, ~0 updated, =27 skipped
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
+---
+
 ## 2026-04-21
 
 ### V2 - 05:41 PM
@@ -1161,123 +1223,6 @@
   - **[UPDATE]** add seller side pages to market place page - changed: Status: In progress, Week, Start date, End date
 
 #### ZOT Sales Board - +0 added, ~0 updated, =25 skipped
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
----
-
-## 2026-04-07
-
-### V2 - 05:36 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 0     | 6       | 1321       |
-
-
-#### StudyReserve Product Board - +0 added, ~5 updated, =197 skipped
-  - **[UPDATE]** Unable to sort enrollments in admin. - changed: Status: In review, Start date, End date
-  - **[UPDATE]** cannot see pending enrollments separately - changed: Status: In review, Start date, End date
-  - **[UPDATE]** cannot see who has recently enrolled (according to date) - changed: Status: In review, Start date, End date
-  - **[UPDATE]** enrollments shown from the beginning . To find a recent one have to keep scrolling to the very last. - changed: Status: In review, Start date, End date
-  - **[UPDATE]** cannot search courses using sirs names. - changed: Status: In review, Start date, End date
-
-#### StudyQ Product Board - Skipped
-*No items found in the current week.*
-
-#### EarlyEmu - Document Generator - +0 added, ~0 updated, =619 skipped
-
-#### UnbrandedLK Product Board - +0 added, ~0 updated, =44 skipped
-
-#### hedwige-ui-rewrite - +0 added, ~1 updated, =102 skipped
-  - **[UPDATE]** 1.8.4: Alert creation components (alertCreate, alertCreateAdvanced) (week 7) - changed: Status: In review
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - +0 added, ~0 updated, =306 skipped
-
-#### Lexigram Product Board - Skipped
-*No items found in the current week.*
-
-#### Lexigram Marketing Board - Skipped
-*No items found in the current week.*
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - Skipped
-*No items found in the current week.*
-
-#### QueueUp Product Board - +0 added, ~0 updated, =16 skipped
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### Yanthra Product project - +0 added, ~0 updated, =12 skipped
-
-#### ZOT Sales Board - +0 added, ~0 updated, =25 skipped
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
-### V1 - 12:19 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 0     | 6       | 1119       |
-
-
-#### StudyReserve Product Board - Skipped
-*No items found in the current week.*
-
-#### StudyQ Product Board - Skipped
-*No items found in the current week.*
-
-#### EarlyEmu - Document Generator - +0 added, ~0 updated, =619 skipped
-
-#### UnbrandedLK Product Board - +0 added, ~0 updated, =44 skipped
-
-#### hedwige-ui-rewrite - +0 added, ~0 updated, =103 skipped
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - +0 added, ~0 updated, =306 skipped
-
-#### Lexigram Product Board - Skipped
-*No items found in the current week.*
-
-#### Lexigram Marketing Board - Skipped
-*No items found in the current week.*
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - Skipped
-*No items found in the current week.*
-
-#### QueueUp Product Board - +0 added, ~1 updated, =15 skipped
-  - **[UPDATE]** Admin - Business Management - changed: Status: In progress
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### Yanthra Product project - +0 added, ~1 updated, =11 skipped
-  - **[UPDATE]** Implement forgot password  page - changed: Status: In progress
-
-#### ZOT Sales Board - +0 added, ~4 updated, =21 skipped
-  - **[UPDATE]** Add people to the Agency - changed: Start date, End date
-  - **[UPDATE]** Adding Cover Image to UnBrandedLK - changed: End date
-  - **[UPDATE]** [QueueUp]Creating a Business Proposal. (last week) - changed: End date
-  - **[UPDATE]** [Ruchika] Ambassador program - changed: Status: Recurring
 
 #### ZOT Marketing Board - Skipped
 *No items found in the current week.*
