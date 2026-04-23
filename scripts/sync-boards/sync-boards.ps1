@@ -910,3 +910,5 @@ if (-not $FullSync) {
 } else {
     Write-Host "`n[FULL-SYNC] Skipping changelog update and cleanup phase." -ForegroundColor Yellow
 }
+
+exit 0
