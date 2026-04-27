@@ -2,6 +2,76 @@
 
 ## 2026-04-27
 
+### V2 - 06:26 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 0     | 15       | 1041       |
+
+
+#### StudyReserve Product Board - +0 added, ~5 updated, =208 skipped
+  - **[UPDATE]** Create Github workflow to host SR student platform (last week) - changed: Week
+  - **[UPDATE]** Extract SR student and SR student dashboard into 2 separate repos (last week) - changed: Week
+  - **[UPDATE]** Add a reset featured tag filter function in dashboard (last week) - changed: Week
+  - **[UPDATE]** Cleanup dashboard project and update packages (last week) - changed: Week
+  - **[UPDATE]** Fix stuck in registration page issue in SR dashboard - changed: Week
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +0 added, ~0 updated, =647 skipped
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### hedwige-ui-rewrite - +0 added, ~0 updated, =110 skipped
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - Skipped
+*No items found in the current week.*
+
+#### BYM Project Board - Skipped
+*No items found in the current week.*
+
+#### QueueUp Product Board - Skipped
+*No items found in the current week.*
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### Yanthra Product project - +0 added, ~0 updated, =35 skipped
+
+#### ZOT Web V6 Product Board - +0 added, ~10 updated, =10 skipped
+  - **[UPDATE]** Generate md files for the portfolio - changed: Week
+  - **[UPDATE]** Study Reserve (last week) - changed: Week
+  - **[UPDATE]** Lexigram (last week) - changed: Week
+  - **[UPDATE]** Be Your Motivation (last week) - changed: Week
+  - **[UPDATE]** StudyQ (last week) - changed: Week
+  - **[UPDATE]** Effort Agent (last week) - changed: Week
+  - **[UPDATE]** (Political Data Analysis Platform) (last week) - changed: Week
+  - **[UPDATE]** Coachello (last week) - changed: Week
+  - **[UPDATE]** Lift (last week) - changed: Week
+  - **[UPDATE]** UnbrandedLK (last week) - changed: Week
+
+#### ZOT Sales Board - +0 added, ~0 updated, =31 skipped
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
 ### V1 - 01:12 PM
 
 | Added | Updated | Skipped |
