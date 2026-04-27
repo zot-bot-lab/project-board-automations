@@ -41,8 +41,8 @@ jobs:
               $isFullSync = $true
             }
           } elseif ("${{ github.event_name }}" -eq "schedule") {
-            # Saturday runs are Full Sync
-            if ((Get-Date).DayOfWeek -eq "Saturday") {
+            # Saturday runs are Full Sync (check cron string for 100% reliability)
+            if ("${{ github.event.schedule }}" -eq "0 0 * * 6") {
               $syncArgs += "-FullSync"
               $isFullSync = $true
             }

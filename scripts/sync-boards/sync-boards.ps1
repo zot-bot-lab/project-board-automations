@@ -441,322 +441,329 @@ for ($bi = 0; $bi -lt $config.secondaryBoards.Count; $bi++) {
     $secOrg = $board.org
     $secNum = $board.projectNumber
     
-    Write-Host "--------------------------------------------"
-    Write-Host "  Board $($bi + 1)/$($config.secondaryBoards.Count): $secOrg (#$secNum)"
-    Write-Host "--------------------------------------------"
-    
-    # Resolve secondary board project ID and Name (cached in config)
-    $secProjId = $board.projectId
-    $secProjName = $board.projectName
-    if (-not $secProjId -or -not $secProjName) {
-        Write-Host "  Resolving project Name/ID (will be cached)..."
-        $secProjListJson = Invoke-GHWithRetry -Arguments @("project", "list", "--owner", $secOrg, "--format", "json") -JsonOutput
-        $secProj = $secProjListJson.projects | Where-Object { $_.number -eq $secNum }
+    try {
+        Write-Host "--------------------------------------------"
+        Write-Host "  Board $($bi + 1)/$($config.secondaryBoards.Count): $secOrg (#$secNum)"
+        Write-Host "--------------------------------------------"
         
-        if (-not $secProj) {
-            Write-Warning "  Could not resolve project for $secOrg #$secNum. Skipping."
-            continue
-        }
-        if (-not $secProjId) {
-            $secProjId = $secProj.id
-            $board | Add-Member -NotePropertyName "projectId" -NotePropertyValue $secProjId -Force
-        }
-        if (-not $secProjName) {
-            $secProjName = $secProj.title
-            $board | Add-Member -NotePropertyName "projectName" -NotePropertyValue $secProjName -Force
-        }
-        $config | ConvertTo-Json -Depth 10 | Set-Content -Path $configPath
-    }
-    
-    if (-not $secProjName) { $secProjName = "$secOrg (#$secNum)" }
-    
-    # Fetch secondary items via optimized GraphQL
-    Write-Host "  Fetching items (GraphQL)..."
-    $secItems = Fetch-ProjectItems $secProjId $secProjName
-    
-    # Detect current week and previous week on this secondary board
-    $currentWeekTitle = $null
-    $previousWeekTitle = $null
-    $prevWeekEndDate = [datetime]::MinValue
-    $recentPastThreshold = $today.AddDays(-14) # Only consider past weeks that ended within the last 14 days
-    
-    foreach ($item in $secItems) {
-        if ($item.week -and $item.week.startDate) {
-            $start = [datetime]::Parse($item.week.startDate)
-            $end = $start.AddDays($item.week.duration)
-            if ($today -ge $start -and $today -le $end) {
-                $currentWeekTitle = $item.week.title
-            } elseif ($end -lt $today -and $end -ge $recentPastThreshold -and $end -gt $prevWeekEndDate) {
-                $previousWeekTitle = $item.week.title
-                $prevWeekEndDate = $end
-            }
-        }
-    }
-    
-    # Filter items
-    $itemsToSync = [System.Collections.Generic.List[hashtable]]::new()
-    
-    if ($FullSync) {
-        # Full backfill: sync every item with a valid status, regardless of week
-        Write-Host "  [FULL-SYNC] Including all items (no week filter)."
-        foreach ($item in $secItems) {
-            if ($item.status -in $ValidStatuses -and $item.url) {
-                $item.isLastWeek = $false
-                $itemsToSync.Add($item)
-            }
-        }
-    } else {
-        if (-not $currentWeekTitle) {
-            Write-Host "  No items found in the current week. Skipping.`n"
-            $runLog.Add("")
-            $runLog.Add("#### $secProjName - Skipped")
-            $runLog.Add("*No items found in the current week.*")
-            continue
-        }
-        Write-Host "  Current iteration: $currentWeekTitle"
-        foreach ($item in $secItems) {
-            $isCurrentWeek = ($item.week -and $item.week.title -eq $currentWeekTitle)
-            $isLastWeek = ($previousWeekTitle -and $item.week -and $item.week.title -eq $previousWeekTitle)
-            $isAlreadyInMain = if ($item.url) { $mainUrlMap.ContainsKey($item.url) } else { $false }
+        # Resolve secondary board project ID and Name (cached in config)
+        $secProjId = $board.projectId
+        $secProjName = $board.projectName
+        if (-not $secProjId -or -not $secProjName) {
+            Write-Host "  Resolving project Name/ID (will be cached)..."
+            $secProjListJson = Invoke-GHWithRetry -Arguments @("project", "list", "--owner", $secOrg, "--format", "json") -JsonOutput
+            $secProj = $secProjListJson.projects | Where-Object { $_.number -eq $secNum }
             
-            if (($isCurrentWeek -or $isLastWeek -or $isAlreadyInMain) -and $item.status -in $ValidStatuses) {
-                if ($item.url) {
-                    $item.isLastWeek = $isLastWeek
-                    # Items included only because they're already on the main board (not in current/last week)
-                    # should NOT have their iteration updated
-                    $item | Add-Member -NotePropertyName 'isOrphan' -NotePropertyValue (-not $isCurrentWeek -and -not $isLastWeek -and $isAlreadyInMain) -Force
-                    $itemsToSync.Add($item)
+            if (-not $secProj) {
+                Write-Warning "  Could not resolve project for $secOrg #$secNum. Skipping."
+                continue
+            }
+            if (-not $secProjId) {
+                $secProjId = $secProj.id
+                $board | Add-Member -NotePropertyName "projectId" -NotePropertyValue $secProjId -Force
+            }
+            if (-not $secProjName) {
+                $secProjName = $secProj.title
+                $board | Add-Member -NotePropertyName "projectName" -NotePropertyValue $secProjName -Force
+            }
+            $config | ConvertTo-Json -Depth 10 | Set-Content -Path $configPath
+        }
+        
+        if (-not $secProjName) { $secProjName = "$secOrg (#$secNum)" }
+        
+        # Fetch secondary items via optimized GraphQL
+        Write-Host "  Fetching items (GraphQL)..."
+        $secItems = Fetch-ProjectItems $secProjId $secProjName
+        
+        # Detect current week and previous week on this secondary board
+        $currentWeekTitle = $null
+        $previousWeekTitle = $null
+        $prevWeekEndDate = [datetime]::MinValue
+        $recentPastThreshold = $today.AddDays(-14) # Only consider past weeks that ended within the last 14 days
+        
+        foreach ($item in $secItems) {
+            if ($item.week -and $item.week.startDate) {
+                $start = [datetime]::Parse($item.week.startDate)
+                $end = $start.AddDays($item.week.duration)
+                if ($today -ge $start -and $today -le $end) {
+                    $currentWeekTitle = $item.week.title
+                } elseif ($end -lt $today -and $end -ge $recentPastThreshold -and $end -gt $prevWeekEndDate) {
+                    $previousWeekTitle = $item.week.title
+                    $prevWeekEndDate = $end
                 }
             }
         }
-    }
-    
-    Write-Host "  Items to sync: $($itemsToSync.Count)"
-    if ($itemsToSync.Count -eq 0) {
-        Write-Host ""
-        $runLog.Add("")
-        $runLog.Add("#### $secProjName - Skipped")
-        $runLog.Add("*No items with valid statuses in current week.*")
-        continue
-    }
-    
-    # Sync each item
-    $boardAdded = 0
-    $boardUpdated = 0
-    $boardSkipped = 0
-    
-    foreach ($sItem in $itemsToSync) {
-        $url = $sItem.url
-        $title = $sItem.title
-        $mItem = $mainUrlMap[$url]
-        $isNew = (-not $mItem)
         
-        $updates = [System.Collections.Generic.List[Hashtable]]::new()
+        # Filter items
+        $itemsToSync = [System.Collections.Generic.List[hashtable]]::new()
         
-        # 1. Status (with option ID validation)
-        $tid = $null
-        if ($sItem.status) {
-            $tid = ($mainStatusField.options | Where-Object { $_.name -eq $sItem.status }).id
-            if (-not $tid) {
-                Write-Warning "      Status '$($sItem.status)' not found on main board - skipping Status field for: $title"
+        if ($FullSync) {
+            # Full backfill: sync every item with a valid status, regardless of week
+            Write-Host "  [FULL-SYNC] Including all items (no week filter)."
+            foreach ($item in $secItems) {
+                if ($item.status -in $ValidStatuses -and $item.url) {
+                    $item.isLastWeek = $false
+                    $itemsToSync.Add($item)
+                }
+            }
+        } else {
+            if (-not $currentWeekTitle) {
+                Write-Host "  No items found in the current week. Skipping.`n"
+                $runLog.Add("")
+                $runLog.Add("#### $secProjName - Skipped")
+                $runLog.Add("*No items found in the current week.*")
+                continue
+            }
+            Write-Host "  Current iteration: $currentWeekTitle"
+            foreach ($item in $secItems) {
+                $isCurrentWeek = ($item.week -and $item.week.title -eq $currentWeekTitle)
+                $isLastWeek = ($previousWeekTitle -and $item.week -and $item.week.title -eq $previousWeekTitle)
+                $isAlreadyInMain = if ($item.url) { $mainUrlMap.ContainsKey($item.url) } else { $false }
+                
+                if (($isCurrentWeek -or $isLastWeek -or $isAlreadyInMain) -and $item.status -in $ValidStatuses) {
+                    if ($item.url) {
+                        $item.isLastWeek = $isLastWeek
+                        # Items included only because they're already on the main board (not in current/last week)
+                        # should NOT have their iteration updated
+                        $item | Add-Member -NotePropertyName 'isOrphan' -NotePropertyValue (-not $isCurrentWeek -and -not $isLastWeek -and $isAlreadyInMain) -Force
+                        $itemsToSync.Add($item)
+                    }
+                }
             }
         }
-        if ($tid) {
-            $mv = if ($mItem) { $mItem.status } else { $null }
-            $u = Get-UpdateHash $mv $sItem.status $mainStatusField $tid "--single-select-option-id" "Status"
-            if ($u) { $updates.Add($u) }
+        
+        Write-Host "  Items to sync: $($itemsToSync.Count)"
+        if ($itemsToSync.Count -eq 0) {
+            Write-Host ""
+            $runLog.Add("")
+            $runLog.Add("#### $secProjName - Skipped")
+            $runLog.Add("*No items with valid statuses in current week.*")
+            continue
         }
         
-        # 2. Iteration - only sync the Week field in normal (non-FullSync) mode.
-        # In -FullSync we are importing tickets, not re-assigning them to sprints.
-        # Orphan items (included only because they're already on the main board) also skip iteration updates.
-        if (-not $FullSync -and -not $sItem.isOrphan) {
-            $sTargetIterationId = $null
-            if ($sItem.week -and $sItem.week.startDate) {
-                $sStart = [datetime]::Parse($sItem.week.startDate)
-                $midPoint = $sStart.AddDays($sItem.week.duration / 2)
-                foreach ($mIter in $mainWeekConfig) {
-                    if ($mIter.startDate) {
-                        $mStart = [datetime]::Parse($mIter.startDate)
-                        $mEnd = $mStart.AddDays($mIter.duration)
-                        if ($midPoint -ge $mStart -and $midPoint -le $mEnd) {
-                            $sTargetIterationId = $mIter.id
-                            break
+        # Sync each item
+        $boardAdded = 0
+        $boardUpdated = 0
+        $boardSkipped = 0
+        
+        foreach ($sItem in $itemsToSync) {
+            $url = $sItem.url
+            $title = $sItem.title
+            $mItem = $mainUrlMap[$url]
+            $isNew = (-not $mItem)
+            
+            $updates = [System.Collections.Generic.List[Hashtable]]::new()
+            
+            # 1. Status (with option ID validation)
+            $tid = $null
+            if ($sItem.status) {
+                $tid = ($mainStatusField.options | Where-Object { $_.name -eq $sItem.status }).id
+                if (-not $tid) {
+                    Write-Warning "      Status '$($sItem.status)' not found on main board - skipping Status field for: $title"
+                }
+            }
+            if ($tid) {
+                $mv = if ($mItem) { $mItem.status } else { $null }
+                $u = Get-UpdateHash $mv $sItem.status $mainStatusField $tid "--single-select-option-id" "Status"
+                if ($u) { $updates.Add($u) }
+            }
+            
+            # 2. Iteration - only sync the Week field in normal (non-FullSync) mode.
+            # In -FullSync we are importing tickets, not re-assigning them to sprints.
+            # Orphan items (included only because they're already on the main board) also skip iteration updates.
+            if (-not $FullSync -and -not $sItem.isOrphan) {
+                $sTargetIterationId = $null
+                if ($sItem.week -and $sItem.week.startDate) {
+                    $sStart = [datetime]::Parse($sItem.week.startDate)
+                    $midPoint = $sStart.AddDays($sItem.week.duration / 2)
+                    foreach ($mIter in $mainWeekConfig) {
+                        if ($mIter.startDate) {
+                            $mStart = [datetime]::Parse($mIter.startDate)
+                            $mEnd = $mStart.AddDays($mIter.duration)
+                            if ($midPoint -ge $mStart -and $midPoint -le $mEnd) {
+                                $sTargetIterationId = $mIter.id
+                                break
+                            }
+                        }
+                    }
+                }
+                # Fallback for current week items if time-period matching failed
+                if (-not $sTargetIterationId -and -not $sItem.isLastWeek) {
+                    $sTargetIterationId = $targetIterationId
+                }
+                # Prevent iteration ping-pong: skip update if sprints start on the same day
+                if ($sTargetIterationId) {
+                    $mv = if ($mItem -and $mItem.week) { $mItem.week.iterationId } else { $null }
+                    $needsIterationUpdate = $true
+                    if ($mv -and $mItem.week -and $mItem.week.startDate -and $sItem.week -and $sItem.week.startDate) {
+                        $mItemStart = [datetime]::Parse($mItem.week.startDate)
+                        $sItemStart = [datetime]::Parse($sItem.week.startDate)
+                        if ($mItemStart -eq $sItemStart) { $needsIterationUpdate = $false }
+                    }
+                    if ($needsIterationUpdate) {
+                        $u = Get-UpdateHash $mv $sTargetIterationId $mainWeekField $sTargetIterationId "--iteration-id" "Week"
+                        if ($u) { $updates.Add($u) }
+                    }
+                }
+            }
+            
+            # 3. Priority
+            $sv = $sItem.priority
+            $tid = $null
+            if ($sv) {
+                $tid = ($mainPriorityField.options | Where-Object { $_.name -eq $sv }).id
+                if (-not $tid) { Write-Warning "      Priority '$sv' not found on main board - skipping for: $title" }
+            }
+            if ($tid) {
+                $mv = if ($mItem) { $mItem.priority } else { $null }
+                $u = Get-UpdateHash $mv $sv $mainPriorityField $tid "--single-select-option-id" "Priority"
+                if ($u) { $updates.Add($u) }
+            }
+            
+            # 4. Size
+            $sv = $sItem.size
+            $tid = $null
+            if ($sv) {
+                $tid = ($mainSizeField.options | Where-Object { $_.name -eq $sv }).id
+                if (-not $tid) { Write-Warning "      Size '$sv' not found on main board - skipping for: $title" }
+            }
+            if ($tid) {
+                $mv = if ($mItem) { $mItem.size } else { $null }
+                $u = Get-UpdateHash $mv $sv $mainSizeField $tid "--single-select-option-id" "Size"
+                if ($u) { $updates.Add($u) }
+            }
+            
+            # 5. Estimate
+            $sv = $sItem.estimate
+            $mv = if ($mItem) { $mItem.estimate } else { $null }
+            $u = Get-UpdateHash $mv $sv $mainEstimateField $sv "--number" "Estimate"
+            if ($u) { $updates.Add($u) }
+            
+            # 6. Start Date
+            $sv = $sItem.'start date'
+            $mv = if ($mItem) { $mItem.'start date' } else { $null }
+            $u = Get-UpdateHash $mv $sv $mainStartDateField $sv "--date" "Start date"
+            if ($u) { $updates.Add($u) }
+            
+            # 7. Target Date / End Date -> End Date
+            $sv = if ($sItem.'target date') { $sItem.'target date' } else { $sItem.'end date' }
+            $mv = if ($mItem) { $mItem.'end date' } else { $null }
+            $u = Get-UpdateHash $mv $sv $mainEndDateField $sv "--date" "End date"
+            if ($u) { $updates.Add($u) }
+            
+            $weekLabel = if ($sItem.isLastWeek) { " (last week)" } else { "" }
+            if ($isNew) {
+                if ($DryRun) {
+                    Write-Host "    [DRY-RUN ADD] $title$weekLabel" -ForegroundColor Cyan
+                    $boardAdded++
+                    $fieldNames = ($updates | ForEach-Object { $_.name }) -join ", "
+                    $runLog.Add("  - **[ADD]** $title$weekLabel - fields set: $fieldNames")
+                } else {
+                    Write-Host "    [ADD] $title$weekLabel"
+                    $addOutput = Invoke-GHWithRetry -Arguments @("project", "item-add", "$MainProjNum", "--owner", $MainOrg, "--url", $url, "--format", "json") -JsonOutput -SuppressError
+                    
+                    if ($addOutput -and $addOutput.id) {
+                        $newItemId = $addOutput.id
+                        foreach ($upd in $updates) {
+                            $cmdArgs = @("project", "item-edit", "--id", $newItemId, "--project-id", $mainProjId, "--field-id", $upd.fieldId)
+                            if ($upd.clear) { $cmdArgs += "--clear" }
+                            else { $cmdArgs += $upd.flag; $cmdArgs += $upd.value }
+                            Invoke-GHWithRetry -Arguments $cmdArgs -SuppressError > $null
+                        }
+                        $mainUrlMap[$url] = @{ id = $newItemId; url = $url; status = $sItem.status }
+                        $boardAdded++
+                        $fieldSummaries = @()
+                        foreach ($upd in $updates) {
+                            if ($upd.name -eq "Status") { $fieldSummaries += "Status: $($upd.newValue)" }
+                            else { $fieldSummaries += $upd.name }
+                        }
+                        $fieldNames = $fieldSummaries -join ", "
+                        $runLog.Add("  - **[ADD]** $title$weekLabel - fields set: $fieldNames")
+                        # Record in manifest for potential rollback
+                        if ($fullSyncManifest -ne $null) {
+                            $fullSyncManifest.Add(@{ action = "add"; itemId = $newItemId; url = $url; title = $title })
+                        }
+                    } else {
+                        # Handle concurrent add: item may have been added between fetch and now
+                        $existingItem = $mainUrlMap[$url]
+                        if ($existingItem) {
+                            Write-Host "      Item already on main board, treating as update."
+                            $mItem = $existingItem
+                            $isNew = $false
+                        } else {
+                            Write-Warning "    Failed to add $url"
+                            $runLog.Add("  - **[FAIL]** Could not add: $title$weekLabel")
                         }
                     }
                 }
             }
-            # Fallback for current week items if time-period matching failed
-            if (-not $sTargetIterationId -and -not $sItem.isLastWeek) {
-                $sTargetIterationId = $targetIterationId
-            }
-            # Prevent iteration ping-pong: skip update if sprints start on the same day
-            if ($sTargetIterationId) {
-                $mv = if ($mItem -and $mItem.week) { $mItem.week.iterationId } else { $null }
-                $needsIterationUpdate = $true
-                if ($mv -and $mItem.week -and $mItem.week.startDate -and $sItem.week -and $sItem.week.startDate) {
-                    $mItemStart = [datetime]::Parse($mItem.week.startDate)
-                    $sItemStart = [datetime]::Parse($sItem.week.startDate)
-                    if ($mItemStart -eq $sItemStart) { $needsIterationUpdate = $false }
-                }
-                if ($needsIterationUpdate) {
-                    $u = Get-UpdateHash $mv $sTargetIterationId $mainWeekField $sTargetIterationId "--iteration-id" "Week"
-                    if ($u) { $updates.Add($u) }
-                }
-            }
-        }
-        
-        # 3. Priority
-        $sv = $sItem.priority
-        $tid = $null
-        if ($sv) {
-            $tid = ($mainPriorityField.options | Where-Object { $_.name -eq $sv }).id
-            if (-not $tid) { Write-Warning "      Priority '$sv' not found on main board - skipping for: $title" }
-        }
-        if ($tid) {
-            $mv = if ($mItem) { $mItem.priority } else { $null }
-            $u = Get-UpdateHash $mv $sv $mainPriorityField $tid "--single-select-option-id" "Priority"
-            if ($u) { $updates.Add($u) }
-        }
-        
-        # 4. Size
-        $sv = $sItem.size
-        $tid = $null
-        if ($sv) {
-            $tid = ($mainSizeField.options | Where-Object { $_.name -eq $sv }).id
-            if (-not $tid) { Write-Warning "      Size '$sv' not found on main board - skipping for: $title" }
-        }
-        if ($tid) {
-            $mv = if ($mItem) { $mItem.size } else { $null }
-            $u = Get-UpdateHash $mv $sv $mainSizeField $tid "--single-select-option-id" "Size"
-            if ($u) { $updates.Add($u) }
-        }
-        
-        # 5. Estimate
-        $sv = $sItem.estimate
-        $mv = if ($mItem) { $mItem.estimate } else { $null }
-        $u = Get-UpdateHash $mv $sv $mainEstimateField $sv "--number" "Estimate"
-        if ($u) { $updates.Add($u) }
-        
-        # 6. Start Date
-        $sv = $sItem.'start date'
-        $mv = if ($mItem) { $mItem.'start date' } else { $null }
-        $u = Get-UpdateHash $mv $sv $mainStartDateField $sv "--date" "Start date"
-        if ($u) { $updates.Add($u) }
-        
-        # 7. Target Date / End Date -> End Date
-        $sv = if ($sItem.'target date') { $sItem.'target date' } else { $sItem.'end date' }
-        $mv = if ($mItem) { $mItem.'end date' } else { $null }
-        $u = Get-UpdateHash $mv $sv $mainEndDateField $sv "--date" "End date"
-        if ($u) { $updates.Add($u) }
-        
-        $weekLabel = if ($sItem.isLastWeek) { " (last week)" } else { "" }
-        if ($isNew) {
-            if ($DryRun) {
-                Write-Host "    [DRY-RUN ADD] $title$weekLabel" -ForegroundColor Cyan
-                $boardAdded++
-                $fieldNames = ($updates | ForEach-Object { $_.name }) -join ", "
-                $runLog.Add("  - **[ADD]** $title$weekLabel - fields set: $fieldNames")
-            } else {
-                Write-Host "    [ADD] $title$weekLabel"
-                $addOutput = Invoke-GHWithRetry -Arguments @("project", "item-add", "$MainProjNum", "--owner", $MainOrg, "--url", $url, "--format", "json") -JsonOutput -SuppressError
-                
-                if ($addOutput -and $addOutput.id) {
-                    $newItemId = $addOutput.id
-                    foreach ($upd in $updates) {
-                        $cmdArgs = @("project", "item-edit", "--id", $newItemId, "--project-id", $mainProjId, "--field-id", $upd.fieldId)
-                        if ($upd.clear) { $cmdArgs += "--clear" }
-                        else { $cmdArgs += $upd.flag; $cmdArgs += $upd.value }
-                        Invoke-GHWithRetry -Arguments $cmdArgs -SuppressError > $null
+            # Handle existing items (or items that fell through from concurrent-add above)
+            if (-not $isNew) {
+                if ($updates.Count -gt 0) {
+                    if ($DryRun) {
+                        Write-Host "    [DRY-RUN UPDATE] $($updates.Count) field(s): $title$weekLabel" -ForegroundColor Cyan
+                    } else {
+                        Write-Host "    [UPDATE] $($updates.Count) field(s): $title$weekLabel"
+                        # Capture previous state for rollback manifest before overwriting
+                        if ($fullSyncManifest -ne $null) {
+                            $prevValues = [System.Collections.Generic.List[hashtable]]::new()
+                            foreach ($upd in $updates) {
+                                switch ($upd.name) {
+                                    "Status"     { $prevOptId = if ($mItem.status) { ($mainStatusField.options | Where-Object { $_.name -eq $mItem.status }).id } else { $null }
+                                                   if ($prevOptId) { $prevValues.Add(@{ fieldId = $mainStatusField.id;    flag = "--single-select-option-id"; value = $prevOptId;                    clear = $false }) }
+                                                   else            { $prevValues.Add(@{ fieldId = $mainStatusField.id;    clear = $true }) } }
+                                    "Week"       { if ($mItem.week -and $mItem.week.iterationId) { $prevValues.Add(@{ fieldId = $mainWeekField.id;    flag = "--iteration-id";           value = $mItem.week.iterationId;    clear = $false }) }
+                                                   else                                           { $prevValues.Add(@{ fieldId = $mainWeekField.id;    clear = $true }) } }
+                                    "Priority"   { $prevOptId = if ($mItem.priority) { ($mainPriorityField.options | Where-Object { $_.name -eq $mItem.priority }).id } else { $null }
+                                                   if ($prevOptId) { $prevValues.Add(@{ fieldId = $mainPriorityField.id; flag = "--single-select-option-id"; value = $prevOptId;                    clear = $false }) }
+                                                   else            { $prevValues.Add(@{ fieldId = $mainPriorityField.id; clear = $true }) } }
+                                    "Size"       { $prevOptId = if ($mItem.size) { ($mainSizeField.options | Where-Object { $_.name -eq $mItem.size }).id } else { $null }
+                                                   if ($prevOptId) { $prevValues.Add(@{ fieldId = $mainSizeField.id;     flag = "--single-select-option-id"; value = $prevOptId;                    clear = $false }) }
+                                                   else            { $prevValues.Add(@{ fieldId = $mainSizeField.id;     clear = $true }) } }
+                                    "Estimate"   { if ($null -ne $mItem.estimate) { $prevValues.Add(@{ fieldId = $mainEstimateField.id;  flag = "--number"; value = [string]$mItem.estimate;    clear = $false }) }
+                                                   else                           { $prevValues.Add(@{ fieldId = $mainEstimateField.id;  clear = $true }) } }
+                                    "Start date" { if ($mItem.'start date')       { $prevValues.Add(@{ fieldId = $mainStartDateField.id; flag = "--date";   value = $mItem.'start date';         clear = $false }) }
+                                                   else                           { $prevValues.Add(@{ fieldId = $mainStartDateField.id; clear = $true }) } }
+                                    "End date"   { if ($mItem.'end date')         { $prevValues.Add(@{ fieldId = $mainEndDateField.id;   flag = "--date";   value = $mItem.'end date';           clear = $false }) }
+                                                   else                           { $prevValues.Add(@{ fieldId = $mainEndDateField.id;   clear = $true }) } }
+                                }
+                            }
+                            $fullSyncManifest.Add(@{ action = "update"; itemId = $mItem.id; url = $url; title = $title; previousValues = @($prevValues) })
+                        }
+                        foreach ($upd in $updates) {
+                            $cmdArgs = @("project", "item-edit", "--id", $mItem.id, "--project-id", $mainProjId, "--field-id", $upd.fieldId)
+                            if ($upd.clear) { $cmdArgs += "--clear" }
+                            else { $cmdArgs += $upd.flag; $cmdArgs += $upd.value }
+                            Invoke-GHWithRetry -Arguments $cmdArgs -SuppressError > $null
+                        }
                     }
-                    $mainUrlMap[$url] = @{ id = $newItemId; url = $url; status = $sItem.status }
-                    $boardAdded++
+                    $boardUpdated++
                     $fieldSummaries = @()
                     foreach ($upd in $updates) {
                         if ($upd.name -eq "Status") { $fieldSummaries += "Status: $($upd.newValue)" }
                         else { $fieldSummaries += $upd.name }
                     }
                     $fieldNames = $fieldSummaries -join ", "
-                    $runLog.Add("  - **[ADD]** $title$weekLabel - fields set: $fieldNames")
-                    # Record in manifest for potential rollback
-                    if ($fullSyncManifest -ne $null) {
-                        $fullSyncManifest.Add(@{ action = "add"; itemId = $newItemId; url = $url; title = $title })
-                    }
+                    $runLog.Add("  - **[UPDATE]** $title$weekLabel - changed: $fieldNames")
                 } else {
-                    # Handle concurrent add: item may have been added between fetch and now
-                    $existingItem = $mainUrlMap[$url]
-                    if ($existingItem) {
-                        Write-Host "      Item already on main board, treating as update."
-                        $mItem = $existingItem
-                        $isNew = $false
-                    } else {
-                        Write-Warning "    Failed to add $url"
-                        $runLog.Add("  - **[FAIL]** Could not add: $title$weekLabel")
-                    }
+                    $boardSkipped++
+                    # Skips are not logged individually - only the count is shown per board
                 }
             }
         }
-        # Handle existing items (or items that fell through from concurrent-add above)
-        if (-not $isNew) {
-            if ($updates.Count -gt 0) {
-                if ($DryRun) {
-                    Write-Host "    [DRY-RUN UPDATE] $($updates.Count) field(s): $title$weekLabel" -ForegroundColor Cyan
-                } else {
-                    Write-Host "    [UPDATE] $($updates.Count) field(s): $title$weekLabel"
-                    # Capture previous state for rollback manifest before overwriting
-                    if ($fullSyncManifest -ne $null) {
-                        $prevValues = [System.Collections.Generic.List[hashtable]]::new()
-                        foreach ($upd in $updates) {
-                            switch ($upd.name) {
-                                "Status"     { $prevOptId = if ($mItem.status) { ($mainStatusField.options | Where-Object { $_.name -eq $mItem.status }).id } else { $null }
-                                               if ($prevOptId) { $prevValues.Add(@{ fieldId = $mainStatusField.id;    flag = "--single-select-option-id"; value = $prevOptId;                    clear = $false }) }
-                                               else            { $prevValues.Add(@{ fieldId = $mainStatusField.id;    clear = $true }) } }
-                                "Week"       { if ($mItem.week -and $mItem.week.iterationId) { $prevValues.Add(@{ fieldId = $mainWeekField.id;    flag = "--iteration-id";           value = $mItem.week.iterationId;    clear = $false }) }
-                                               else                                           { $prevValues.Add(@{ fieldId = $mainWeekField.id;    clear = $true }) } }
-                                "Priority"   { $prevOptId = if ($mItem.priority) { ($mainPriorityField.options | Where-Object { $_.name -eq $mItem.priority }).id } else { $null }
-                                               if ($prevOptId) { $prevValues.Add(@{ fieldId = $mainPriorityField.id; flag = "--single-select-option-id"; value = $prevOptId;                    clear = $false }) }
-                                               else            { $prevValues.Add(@{ fieldId = $mainPriorityField.id; clear = $true }) } }
-                                "Size"       { $prevOptId = if ($mItem.size) { ($mainSizeField.options | Where-Object { $_.name -eq $mItem.size }).id } else { $null }
-                                               if ($prevOptId) { $prevValues.Add(@{ fieldId = $mainSizeField.id;     flag = "--single-select-option-id"; value = $prevOptId;                    clear = $false }) }
-                                               else            { $prevValues.Add(@{ fieldId = $mainSizeField.id;     clear = $true }) } }
-                                "Estimate"   { if ($null -ne $mItem.estimate) { $prevValues.Add(@{ fieldId = $mainEstimateField.id;  flag = "--number"; value = [string]$mItem.estimate;    clear = $false }) }
-                                               else                           { $prevValues.Add(@{ fieldId = $mainEstimateField.id;  clear = $true }) } }
-                                "Start date" { if ($mItem.'start date')       { $prevValues.Add(@{ fieldId = $mainStartDateField.id; flag = "--date";   value = $mItem.'start date';         clear = $false }) }
-                                               else                           { $prevValues.Add(@{ fieldId = $mainStartDateField.id; clear = $true }) } }
-                                "End date"   { if ($mItem.'end date')         { $prevValues.Add(@{ fieldId = $mainEndDateField.id;   flag = "--date";   value = $mItem.'end date';           clear = $false }) }
-                                               else                           { $prevValues.Add(@{ fieldId = $mainEndDateField.id;   clear = $true }) } }
-                            }
-                        }
-                        $fullSyncManifest.Add(@{ action = "update"; itemId = $mItem.id; url = $url; title = $title; previousValues = @($prevValues) })
-                    }
-                    foreach ($upd in $updates) {
-                        $cmdArgs = @("project", "item-edit", "--id", $mItem.id, "--project-id", $mainProjId, "--field-id", $upd.fieldId)
-                        if ($upd.clear) { $cmdArgs += "--clear" }
-                        else { $cmdArgs += $upd.flag; $cmdArgs += $upd.value }
-                        Invoke-GHWithRetry -Arguments $cmdArgs -SuppressError > $null
-                    }
-                }
-                $boardUpdated++
-                $fieldSummaries = @()
-                foreach ($upd in $updates) {
-                    if ($upd.name -eq "Status") { $fieldSummaries += "Status: $($upd.newValue)" }
-                    else { $fieldSummaries += $upd.name }
-                }
-                $fieldNames = $fieldSummaries -join ", "
-                $runLog.Add("  - **[UPDATE]** $title$weekLabel - changed: $fieldNames")
-            } else {
-                $boardSkipped++
-                # Skips are not logged individually - only the count is shown per board
-            }
-        }
+        
+        $runLog.Insert(($runLog.Count - $boardAdded - $boardUpdated), "")
+        $runLog.Insert(($runLog.Count - $boardAdded - $boardUpdated), "#### $secProjName - +$boardAdded added, ~$boardUpdated updated, =$boardSkipped skipped")
+        Write-Host "  Results: +$boardAdded added, ~$boardUpdated updated, =$boardSkipped skipped`n"
+        $totalAdded += $boardAdded
+        $totalUpdated += $boardUpdated
+        $totalSkipped += $boardSkipped
+    } catch {
+        Write-Warning "  Unexpected error syncing board $secOrg (#$secNum): $($_.Exception.Message)"
+        $runLog.Add("")
+        $runLog.Add("#### $secProjName - [ERROR] Sync failed")
+        $runLog.Add("  - $($_.Exception.Message)")
     }
-    
-    $runLog.Insert(($runLog.Count - $boardAdded - $boardUpdated), "")
-    $runLog.Insert(($runLog.Count - $boardAdded - $boardUpdated), "#### $secProjName - +$boardAdded added, ~$boardUpdated updated, =$boardSkipped skipped")
-    Write-Host "  Results: +$boardAdded added, ~$boardUpdated updated, =$boardSkipped skipped`n"
-    $totalAdded += $boardAdded
-    $totalUpdated += $boardUpdated
-    $totalSkipped += $boardSkipped
 } # end board loop
 } finally {
     # Save manifest here so it's always written, even if the script crashes mid-run
@@ -908,7 +915,20 @@ if (-not $FullSync) {
     $cleanedContent | Set-Content -Path $changelogPath -Encoding UTF8
     Write-Host "[CLEANUP] Done. Kept $($keptSections.Count) date section(s)."
 } else {
-    Write-Host "`n[FULL-SYNC] Skipping changelog update and cleanup phase." -ForegroundColor Yellow
+    Write-Host "`n[FULL-SYNC] Skipping main changelog update. Logging to full-sync.log..." -ForegroundColor Yellow
+    $fullSyncLogPath = Join-Path (Join-Path $repoRoot "changelogs") "full-sync.log"
+    $logEntry = @"
+
+============================================
+  FULL SYNC: $((Get-Date).ToString("yyyy-MM-dd HH:mm:ss"))
+============================================
+  Added:   $totalAdded
+  Updated: $totalUpdated
+  Skipped: $totalSkipped
+--------------------------------------------
+"@
+    Add-Content -Path $fullSyncLogPath -Value $logEntry
+    Write-Host "[LOG] Full Sync log updated: $fullSyncLogPath"
 }
 
 exit 0
