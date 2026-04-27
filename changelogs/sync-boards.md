@@ -1,5 +1,81 @@
 # Sync Boards - Run Log
 
+## 2026-04-27
+
+### V1 - 01:12 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 11     | 8       | 988       |
+
+
+#### StudyReserve Product Board - +3 added, ~0 updated, =205 skipped
+  - **[ADD]** [Bug] Student device connectivity data is not visible on the manager's dashboard. - fields set: Status: In progress, Week, Start date, End date
+  - **[ADD]** [Bug] Teacher selection dropdown showing 'undefined' in Add Course modal. - fields set: Status: Ready, Week
+  - **[ADD]** [Bug] The manager is unable to upload a student's payment slip. - fields set: Status: Ready, Week
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +1 added, ~1 updated, =628 skipped
+  - **[UPDATE]** Research: Karpathy's LLM Wiki - changed: Week
+  - **[ADD]** Release v1.18.0 - fields set: Status: In progress, Week
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### hedwige-ui-rewrite - +3 added, ~6 updated, =101 skipped
+  - **[UPDATE]** 1.15.3: Track A bug fixes + test gap coverage (week 8) - changed: Week
+  - **[UPDATE]** 1.15.4: Track B bug fixes + test gap coverage (week 8) - changed: Week
+  - **[UPDATE]** 2.1.3: Full integration testing (week 9-10) - changed: Week
+  - **[UPDATE]** 2.1.4: E2E test suite (week 9-10) - changed: Week
+  - **[UPDATE]** 2.1.6: Responsive testing (week 9-10) - changed: Week
+  - **[UPDATE]** 2.1.5: Cross-browser testing (week 9-10) (last week) - changed: Week
+  - **[ADD]** [FIX] Onboarding Pages Responsiveness - fields set: Status: Ready, Week
+  - **[ADD]** [FIX] Improve "Page Not Found" Mobile responsiveness with buttons. - fields set: Status: Ready, Week
+  - **[ADD]** [FIX] Date Range Selector Mobile responsiveness in Filter drawer in Parliment Pages. - fields set: Status: Ready, Week
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - Skipped
+*No items found in the current week.*
+
+#### BYM Project Board - Skipped
+*No items found in the current week.*
+
+#### QueueUp Product Board - Skipped
+*No items found in the current week.*
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### Yanthra Product project - +4 added, ~0 updated, =28 skipped
+  - **[ADD]** add Sinhala language to web site - fields set: Status: In progress, Week
+  - **[ADD]** fix ui ux of about us page (last week) - fields set: Status: Done, Week, Start date, End date
+  - **[ADD]** change color patern in about us page - fields set: Status: Ready, Week
+  - **[ADD]** seed data via json file for machine listing - fields set: Status: In progress, Week, Start date, End date
+
+#### ZOT Sales Board - +0 added, ~1 updated, =26 skipped
+  - **[UPDATE]** Codevus projects - changed: Week
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
+---
+
 ## 2026-04-24
 
 ### V2 - 05:41 PM
@@ -1218,116 +1294,6 @@
 
 #### ZOT Sales Board - Skipped
 *No items found in the current week.*
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
----
-
-## 2026-04-10
-
-### V2 - 05:33 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 0     | 0       | 1397       |
-
-
-#### StudyReserve Product Board - +0 added, ~0 updated, =202 skipped
-
-#### StudyQ Product Board - +0 added, ~0 updated, =34 skipped
-
-#### EarlyEmu - Document Generator - +0 added, ~0 updated, =621 skipped
-
-#### UnbrandedLK Product Board - +0 added, ~0 updated, =44 skipped
-
-#### hedwige-ui-rewrite - +0 added, ~0 updated, =106 skipped
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - +0 added, ~0 updated, =306 skipped
-
-#### Lexigram Product Board - Skipped
-*No items found in the current week.*
-
-#### Lexigram Marketing Board - Skipped
-*No items found in the current week.*
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - +0 added, ~0 updated, =29 skipped
-
-#### QueueUp Product Board - +0 added, ~0 updated, =16 skipped
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### Yanthra Product project - +0 added, ~0 updated, =14 skipped
-
-#### ZOT Sales Board - +0 added, ~0 updated, =25 skipped
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
-### V1 - 12:34 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 6     | 4       | 1387       |
-
-
-#### StudyReserve Product Board - +0 added, ~0 updated, =202 skipped
-
-#### StudyQ Product Board - +3 added, ~1 updated, =30 skipped
-  - **[UPDATE]** Update StudyQ  Landing Page Pricing Structure - changed: Status: In review
-  - **[ADD]** Update the studyQ Landing Page Footer - fields set: Status: In progress, Week
-  - **[ADD]** StudyQ Legal Pages Development (Privacy Policy & Terms of Service) - fields set: Status: In progress, Week
-  - **[ADD]** StudyQ Contact Us Page Development - fields set: Status: In progress, Week
-
-#### EarlyEmu - Document Generator - +0 added, ~0 updated, =621 skipped
-
-#### UnbrandedLK Product Board - +0 added, ~0 updated, =44 skipped
-
-#### hedwige-ui-rewrite - +1 added, ~2 updated, =103 skipped
-  - **[UPDATE]** 1.5.1: Area blocks  (week 6) - changed: Status: In review
-  - **[UPDATE]** 2.1.1: Comprehensive Vue change log review (week 9) - changed: Status: In review
-  - **[ADD]** Sync with changelog items - fields set: Status: Done, Week
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - +0 added, ~0 updated, =306 skipped
-
-#### Lexigram Product Board - Skipped
-*No items found in the current week.*
-
-#### Lexigram Marketing Board - Skipped
-*No items found in the current week.*
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - +1 added, ~0 updated, =28 skipped
-  - **[ADD]** Research about implementing a notification server - fields set: Status: Done, Week, Start date, End date
-
-#### QueueUp Product Board - +0 added, ~0 updated, =16 skipped
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### Yanthra Product project - +1 added, ~0 updated, =13 skipped
-  - **[ADD]** implement reject product email send by admin - fields set: Status: In progress, Week, Start date, End date
-
-#### ZOT Sales Board - +0 added, ~1 updated, =24 skipped
-  - **[UPDATE]** Upwork Profile Remaining Tasks (last week) - changed: Status: Backlog
 
 #### ZOT Marketing Board - Skipped
 *No items found in the current week.*
