@@ -1,5 +1,92 @@
 # Sync Boards - Run Log
 
+## 2026-05-04
+
+### V1 - 01:34 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 10     | 18       | 865       |
+
+
+#### StudyReserve Product Board - Skipped
+*No items found in the current week.*
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +1 added, ~3 updated, =646 skipped
+  - **[UPDATE]** Fix: update settings toggle to show specific toast messages - changed: Week
+  - **[UPDATE]** Automatic document draft generation planning - changed: Week
+  - **[UPDATE]** Research: Karpathy's LLM Wiki (last week) - changed: Status: Backlog
+  - **[ADD]** feat: add close button to explorer and knowledge base drawers for mobile navigation - fields set: Status: In review, Week, Start date, End date
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### hedwige-ui-rewrite - +0 added, ~14 updated, =96 skipped
+  - **[UPDATE]** 1.15.3: Track A bug fixes + test gap coverage (week 8) - changed: Week
+  - **[UPDATE]** 1.15.4: Track B bug fixes + test gap coverage (week 8) - changed: Week
+  - **[UPDATE]** 2.1.3: Full integration testing (week 9-10) - changed: Week
+  - **[UPDATE]** 2.1.4: E2E test suite (week 9-10) - changed: Week
+  - **[UPDATE]** 2.1.6: Responsive testing (week 9-10) (last week) - changed: Status: In review
+  - **[UPDATE]** 2.1.7: Bug fix sprint (week 9-10) - changed: Status: In progress, Week
+  - **[UPDATE]** 2.1.9: Performance optimization (week 9-10) - changed: Status: In progress, Week
+  - **[UPDATE]** 3.1.1: UAT (User Acceptance Testing) (week 11-12) - changed: Status: In progress, Week
+  - **[UPDATE]** 3.1.2: UAT bug fixes (week 11-12) - changed: Status: In progress, Week
+  - **[UPDATE]** 3.1.3: Port P2 Vue changes (week 11-12) - changed: Status: In progress, Week
+  - **[UPDATE]** 3.1.5: Hotfix buffer (week 11-12) - changed: Status: In progress, Week
+  - **[UPDATE]** [FIX] Onboarding Pages Responsiveness - changed: Status: In progress, Week
+  - **[UPDATE]** [FIX] Improve "Page Not Found" Mobile responsiveness with buttons. (last week) - changed: Status: In review
+  - **[UPDATE]** [FIX] Date Range Selector Mobile responsiveness in Filter drawer in Parliment Pages. (last week) - changed: Status: In review
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - Skipped
+*No items found in the current week.*
+
+#### BYM Project Board - +1 added, ~0 updated, =35 skipped
+  - **[ADD]** whatsapp ux chat alignment - fields set: Status: In progress, Week
+
+#### QueueUp Product Board - +4 added, ~0 updated, =22 skipped
+  - **[ADD]** [REFACTOR] Profile & Settings Page - fields set: Status: In progress, Week, Start date
+  - **[ADD]** [REFACTOR] Business Page Navigation Bar - fields set: Status: Ready, Week, Start date
+  - **[ADD]** [REFACTOR] Live Queue Page Title Card - fields set: Status: Ready, Week, Start date
+  - **[ADD]** Creating a separate page for Analytical view of business history - fields set: Status: Ready, Week, Start date
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### Yanthra Product project - +4 added, ~0 updated, =36 skipped
+  - **[ADD]** Change the front the the google sans - fields set: Status: In progress, Week, Start date, End date
+  - **[ADD]** change the sinhala words length - fields set: Status: In progress, Week, Start date, End date
+  - **[ADD]** change the logout button  color - fields set: Status: In progress, Week
+  - **[ADD]** change the seller layout - fields set: Status: Ready, Week
+
+#### ZOT Web V6 Product Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Sales Board - +0 added, ~1 updated, =30 skipped
+  - **[UPDATE]** [Ruchika] Ambassador program - changed: Week
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
+---
+
 ## 2026-05-01
 
 ### V2 - 05:40 PM
@@ -1223,119 +1310,6 @@
 
 #### ZOT Sales Board - +0 added, ~1 updated, =25 skipped
   - **[UPDATE]** QueueUp Pitch to Auto Miraj - changed: Week
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
----
-
-## 2026-04-17
-
-### V2 - 05:37 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 0     | 1       | 867       |
-
-
-#### StudyReserve Product Board - Skipped
-*No items found in the current week.*
-
-#### StudyQ Product Board - Skipped
-*No items found in the current week.*
-
-#### EarlyEmu - Document Generator - +0 added, ~0 updated, =624 skipped
-
-#### UnbrandedLK Product Board - +0 added, ~1 updated, =44 skipped
-  - **[UPDATE]** Tryout PgBouncer in the dev environment (last week) - changed: Status: In progress
-
-#### hedwige-ui-rewrite - +0 added, ~0 updated, =107 skipped
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - Skipped
-*No items found in the current week.*
-
-#### Lexigram Product Board - Skipped
-*No items found in the current week.*
-
-#### Lexigram Marketing Board - Skipped
-*No items found in the current week.*
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - +0 added, ~0 updated, =29 skipped
-
-#### QueueUp Product Board - +0 added, ~0 updated, =18 skipped
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### Yanthra Product project - +0 added, ~0 updated, =19 skipped
-
-#### ZOT Sales Board - +0 added, ~0 updated, =26 skipped
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
-### V1 - 12:38 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 4     | 2       | 862       |
-
-
-#### StudyReserve Product Board - Skipped
-*No items found in the current week.*
-
-#### StudyQ Product Board - Skipped
-*No items found in the current week.*
-
-#### EarlyEmu - Document Generator - +0 added, ~0 updated, =624 skipped
-
-#### UnbrandedLK Product Board - +0 added, ~0 updated, =45 skipped
-
-#### hedwige-ui-rewrite - +1 added, ~2 updated, =104 skipped
-  - **[UPDATE]** 1.15.3: Track A bug fixes + test gap coverage (week 8) - changed: Status: In progress
-  - **[UPDATE]** 1.15.4: Track B bug fixes + test gap coverage (week 8) - changed: Status: In progress
-  - **[ADD]** [FIX] Feedback items contd. - fields set: Status: In review, Week
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - Skipped
-*No items found in the current week.*
-
-#### Lexigram Product Board - Skipped
-*No items found in the current week.*
-
-#### Lexigram Marketing Board - Skipped
-*No items found in the current week.*
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - +0 added, ~0 updated, =29 skipped
-
-#### QueueUp Product Board - +0 added, ~0 updated, =18 skipped
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### Yanthra Product project - +3 added, ~0 updated, =16 skipped
-  - **[ADD]** implement pause button for the product view - fields set: Status: Done, Week, Start date, End date
-  - **[ADD]** implement the support page interface - fields set: Status: Done, Week, Start date, End date
-  - **[ADD]** implement support page backend logic - fields set: Status: In progress, Week, Start date, End date
-
-#### ZOT Sales Board - +0 added, ~0 updated, =26 skipped
 
 #### ZOT Marketing Board - Skipped
 *No items found in the current week.*
