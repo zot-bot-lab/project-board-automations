@@ -2,6 +2,97 @@
 
 ## 2026-05-06
 
+### V2 - 06:38 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 35     | 0       | 353       |
+
+
+#### StudyReserve Product Board - +7 added, ~0 updated, =197 skipped
+  - **[ADD]** [Bug] Teacher selection dropdown showing 'undefined' in Add Course modal. (last week) - fields set: Status: In review, Week, Start date, End date
+  - **[ADD]** [Bug] Student device connectivity data is not visible on the manager's dashboard. (last week) - fields set: Status: In review, Week, Start date, End date
+  - **[ADD]** [Bug] The manager is unable to upload a student's payment slip. (last week) - fields set: Status: Done, Week
+  - **[ADD]** Fix stuck in registration page issue in SR dashboard (last week) - fields set: Status: Done, Week
+  - **[ADD]** Test dashboard app (last week) - fields set: Status: Done, Week
+  - **[ADD]** Manager role should be able to do everything the Admin can - fields set: Status: In review, Week
+  - **[ADD]** Introduce theme files to student-app and the admin-app - fields set: Status: In progress, Week
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - Skipped
+*No items found in the current week.*
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### hedwige-ui-rewrite - +3 added, ~0 updated, =103 skipped
+  - **[ADD]** [FIX] Onboarding Pages Responsiveness - fields set: Status: In progress, Week
+  - **[ADD]** [FIX] Improve "Page Not Found" Mobile responsiveness with buttons. (last week) - fields set: Status: In review, Week
+  - **[ADD]** [FIX] Date Range Selector Mobile responsiveness in Filter drawer in Parliment Pages. (last week) - fields set: Status: In review, Week
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - +2 added, ~0 updated, =4 skipped
+  - **[ADD]** Bug When editing documents (last week) - fields set: Status: Done, Week, Start date
+  - **[ADD]** Issue when creating a Manual Invoice in the beginning of the month - fields set: Status: Done, Week, Start date, End date
+
+#### BYM Project Board - +2 added, ~0 updated, =17 skipped
+  - **[ADD]** Dark / Light Mode — System-Adaptive Theming (last week) - fields set: Status: Done, Week, Start date, End date
+  - **[ADD]** whatsapp ux chat alignment - fields set: Status: Done, Week
+  - **[ADD]** Deploying the backend - fields set: Status: Done, Week, Start date, End date
+
+#### QueueUp Product Board - +7 added, ~0 updated, =14 skipped
+  - **[ADD]** [TEST] Writing missing unit test cases for services and controllers. (last week) - fields set: Status: Done, Week
+  - **[ADD]** [REFACTOR] Profile & Settings Page - fields set: Status: Done, Week, Start date
+  - **[ADD]** [REFACTOR] Business Page Navigation Bar - fields set: Status: Done, Week, Start date
+  - **[ADD]** [REFACTOR] Live Queue Page Title Card - fields set: Status: Done, Week, Start date
+  - **[ADD]** Creating a separate page for Analytical view of business history - fields set: Status: Done, Week, Start date
+  - **[ADD]** Fixing QueueManagement Bugs - fields set: Status: Done, Week, Start date, End date
+  - **[FAIL]** Could not add: QueueUp Analytics Erorr Fix
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### Yanthra Product project - +10 added, ~0 updated, =9 skipped
+  - **[ADD]** add Sinhala language to web site (last week) - fields set: Status: Done, Week
+  - **[ADD]** change color patern in about us page (last week) - fields set: Status: Done, Week
+  - **[ADD]** admin platform setting change (last week) - fields set: Status: Done, Week
+  - **[ADD]** seed data via json file for machine listing (last week) - fields set: Status: Done, Week, Start date, End date
+  - **[ADD]** footer update  copy right name and update current year automatically (last week) - fields set: Status: Done, Week, Start date, End date
+  - **[ADD]** Change the front the the google sans - fields set: Status: Done, Week, Start date, End date
+  - **[ADD]** change the sinhala words length - fields set: Status: Done, Week, Start date, End date
+  - **[ADD]** change the logout button  color - fields set: Status: Done, Week
+  - **[ADD]** change the seller layout - fields set: Status: Done, Week
+  - **[ADD]** check mobile responsiveness working correctly - fields set: Status: In progress, Week
+
+#### ZOT Web V6 Product Board - Skipped
+*No items found in the current week.*
+  - **[ADD]** 2026 Q2 Sales Plan - fields set: Status: Recurring, Week
+
+#### ZOT Sales Board - +4 added, ~0 updated, =9 skipped
+  - **[FAIL]** Could not add: [Strategy] Upselling Plan
+  - **[ADD]** New websites for yuck websites - fields set: Status: Recurring, Week
+  - **[ADD]** Upwork Proposal Tracking - fields set: Status: Recurring, Week, Size, Start date, End date
+  - **[ADD]** [Ruchika] Ambassador program - fields set: Status: Recurring, Week
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
 ### V1 - 01:14 PM
 
 | Added | Updated | Skipped |
