@@ -2,6 +2,72 @@
 
 ## 2026-05-07
 
+### V2 - 06:41 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 0     | 11       | 1206       |
+
+
+#### StudyReserve Product Board - +0 added, ~1 updated, =217 skipped
+  - **[UPDATE]** Settings/ configuration page to the admin app - changed: Week
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +0 added, ~1 updated, =662 skipped
+  - **[UPDATE]** Add skills for Claude Code - changed: Week
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### hedwige-ui-rewrite - +0 added, ~0 updated, =110 skipped
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - +0 added, ~0 updated, =78 skipped
+
+#### BYM Project Board - +0 added, ~0 updated, =36 skipped
+
+#### QueueUp Product Board - +0 added, ~0 updated, =29 skipped
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### JIT Plastics Product Board - +0 added, ~4 updated, =0 skipped
+  - **[UPDATE]** MVP - changed: Week
+  - **[UPDATE]** Set up PostgreSQL database with Prisma - changed: Status: In progress, Week
+  - **[UPDATE]** Implement NextAuth.js with credentials provider - changed: Status: Ready, Week
+  - **[UPDATE]** Implement route protection with middleware - changed: Status: Ready, Week
+
+#### Yanthra Product project - +0 added, ~5 updated, =43 skipped
+  - **[UPDATE]** bug/every photo show same size in the description - changed: Week
+  - **[UPDATE]** bug/cant update location after create listing - changed: Week
+  - **[UPDATE]** feature/add automatically scroll to the validation place - changed: Week
+  - **[UPDATE]** bug/convert validation to sinhala - changed: Week
+  - **[UPDATE]** bug/save draft not working properly - changed: Week
+
+#### ZOT Web V6 Product Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Sales Board - +0 added, ~0 updated, =31 skipped
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
 ### V1 - 01:30 PM
 
 | Added | Updated | Skipped |
