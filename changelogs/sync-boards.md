@@ -2,6 +2,67 @@
 
 ## 2026-05-13
 
+### V2 - 07:02 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 3     | 0       | 1184       |
+
+
+#### StudyReserve Product Board - Skipped
+*No items found in the current week.*
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +0 added, ~0 updated, =666 skipped
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### hedwige-ui-rewrite - +3 added, ~0 updated, =111 skipped
+  - **[ADD]** [FIX] Date Range Selector component issue for “choisir une date” option. - fields set: Status: Ready, Week
+  - **[ADD]** [FIX] Manifesto Page Navigation issues for selecting document - fields set: Status: Ready, Week
+  - **[ADD]** [FIX] client feedback sheet (FB-060 to FB-064) - fields set: Status: Ready, Week
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - +0 added, ~0 updated, =313 skipped
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - Skipped
+*No items found in the current week.*
+
+#### BYM Project Board - Skipped
+*No items found in the current week.*
+
+#### QueueUp Product Board - Skipped
+*No items found in the current week.*
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### JIT Plastics Product Board - +0 added, ~0 updated, =12 skipped
+
+#### Yanthra Product project - +0 added, ~0 updated, =50 skipped
+
+#### ZOT Web V6 Product Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Sales Board - +0 added, ~0 updated, =32 skipped
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
 ### V1 - 01:43 PM
 
 | Added | Updated | Skipped |
