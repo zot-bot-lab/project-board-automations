@@ -1,5 +1,71 @@
 # Sync Boards - Run Log
 
+## 2026-05-13
+
+### V1 - 01:43 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 1     | 3       | 1180       |
+
+
+#### StudyReserve Product Board - Skipped
+*No items found in the current week.*
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +0 added, ~0 updated, =666 skipped
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### hedwige-ui-rewrite - +0 added, ~0 updated, =111 skipped
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - +0 added, ~0 updated, =313 skipped
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - Skipped
+*No items found in the current week.*
+
+#### BYM Project Board - Skipped
+*No items found in the current week.*
+
+#### QueueUp Product Board - Skipped
+*No items found in the current week.*
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### JIT Plastics Product Board - +0 added, ~3 updated, =9 skipped
+  - **[UPDATE]** [Bug] Approved quotes not showing in the order page. - changed: Week
+  - **[UPDATE]** Develop-Admin catalog management page. - changed: Status: In progress, Week
+  - **[UPDATE]** Develop Admin Order and Quote Management Pages - changed: Status: In progress, Week
+
+#### Yanthra Product project - +1 added, ~0 updated, =49 skipped
+  - **[ADD]** Admin Change logo and  Name of company - fields set: Status: In progress, Week, Start date, End date
+
+#### ZOT Web V6 Product Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Sales Board - +0 added, ~0 updated, =32 skipped
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
+---
+
 ## 2026-05-12
 
 ### V2 - 06:47 PM
@@ -1234,123 +1300,6 @@
 
 #### ZOT Web V6 Product Board - +0 added, ~1 updated, =19 skipped
   - **[UPDATE]** Adding Apply form in the careers page - changed: Status: In review
-
-#### ZOT Sales Board - +0 added, ~0 updated, =31 skipped
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
----
-
-## 2026-04-28
-
-### V2 - 06:32 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 2     | 1       | 1076       |
-
-
-#### StudyReserve Product Board - +0 added, ~0 updated, =213 skipped
-
-#### StudyQ Product Board - Skipped
-*No items found in the current week.*
-
-#### EarlyEmu - Document Generator - +0 added, ~0 updated, =647 skipped
-
-#### UnbrandedLK Product Board - Skipped
-*No items found in the current week.*
-
-#### hedwige-ui-rewrite - +0 added, ~0 updated, =110 skipped
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - Skipped
-*No items found in the current week.*
-
-#### Lexigram Product Board - Skipped
-*No items found in the current week.*
-
-#### Lexigram Marketing Board - Skipped
-*No items found in the current week.*
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - Skipped
-*No items found in the current week.*
-
-#### QueueUp Product Board - +1 added, ~0 updated, =21 skipped
-  - **[ADD]** [TEST] Writing missing unit test cases for services and controllers. - fields set: Status: In progress, Week
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### Yanthra Product project - +1 added, ~1 updated, =34 skipped
-  - **[UPDATE]** admin platform setting change - changed: Status: Ready, Week
-  - **[ADD]** footer update  copy right name and update current year automatically - fields set: Status: Done, Week, Start date, End date
-
-#### ZOT Web V6 Product Board - +0 added, ~0 updated, =20 skipped
-
-#### ZOT Sales Board - +0 added, ~0 updated, =31 skipped
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
-### V1 - 01:12 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 1     | 0       | 1056       |
-
-
-#### StudyReserve Product Board - +0 added, ~0 updated, =213 skipped
-
-#### StudyQ Product Board - Skipped
-*No items found in the current week.*
-
-#### EarlyEmu - Document Generator - +0 added, ~0 updated, =647 skipped
-
-#### UnbrandedLK Product Board - Skipped
-*No items found in the current week.*
-
-#### hedwige-ui-rewrite - +0 added, ~0 updated, =110 skipped
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - Skipped
-*No items found in the current week.*
-
-#### Lexigram Product Board - Skipped
-*No items found in the current week.*
-
-#### Lexigram Marketing Board - Skipped
-*No items found in the current week.*
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - Skipped
-*No items found in the current week.*
-
-#### QueueUp Product Board - Skipped
-*No items found in the current week.*
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### Yanthra Product project - +1 added, ~0 updated, =35 skipped
-  - **[ADD]** footer update current year and change the copy right name - fields set: Status: In progress, Week, Start date, End date
-
-#### ZOT Web V6 Product Board - +0 added, ~0 updated, =20 skipped
 
 #### ZOT Sales Board - +0 added, ~0 updated, =31 skipped
 
