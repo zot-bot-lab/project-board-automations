@@ -2,6 +2,65 @@
 
 ## 2026-05-15
 
+### V2 - 06:39 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 0     | 1       | 1189       |
+
+
+#### StudyReserve Product Board - Skipped
+*No items found in the current week.*
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +0 added, ~0 updated, =666 skipped
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### hedwige-ui-rewrite - +0 added, ~0 updated, =115 skipped
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - +0 added, ~1 updated, =312 skipped
+  - **[UPDATE]** Error when creating a record in the App - changed: Status: Backlog
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - Skipped
+*No items found in the current week.*
+
+#### BYM Project Board - Skipped
+*No items found in the current week.*
+
+#### QueueUp Product Board - Skipped
+*No items found in the current week.*
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### JIT Plastics Product Board - +0 added, ~0 updated, =13 skipped
+
+#### Yanthra Product project - +0 added, ~0 updated, =51 skipped
+
+#### ZOT Web V6 Product Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Sales Board - +0 added, ~0 updated, =32 skipped
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
 ### V1 - 01:48 PM
 
 | Added | Updated | Skipped |
