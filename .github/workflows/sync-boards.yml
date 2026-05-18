@@ -11,11 +11,12 @@ on:
         options:
           - Regular
           - Full
-  schedule:
-    # 11:00 AM, 5:00 PM Asia/Colombo (UTC+5:30) on weekdays
-    - cron: '30 5,11 * * 1-5'
-    # 5:30 AM Asia/Colombo (UTC+5:30) on Saturdays (Full Sync)
-    - cron: '0 0 * * 6'
+  # schedule:
+  #   # Scheduled runs migrated to cron-job.org (Account: jayalathmegha@gmail.com) to avoid GitHub Actions cron drift.
+  #   # ~11:00 AM, ~5:00 PM Asia/Colombo (UTC+5:30) on weekdays
+  #   - cron: '13 5,11 * * 1-5'
+  #   # ~5:30 AM Asia/Colombo (UTC+5:30) on Saturdays (Full Sync)
+  #   - cron: '47 23 * * 5'
 
 jobs:
   sync-boards:
@@ -42,7 +43,7 @@ jobs:
             }
           } elseif ("${{ github.event_name }}" -eq "schedule") {
             # Saturday runs are Full Sync (check cron string for 100% reliability)
-            if ("${{ github.event.schedule }}" -eq "0 0 * * 6") {
+            if ("${{ github.event.schedule }}" -eq "47 23 * * 5") {
               $syncArgs["FullSync"] = $true
               $isFullSync = $true
             }
