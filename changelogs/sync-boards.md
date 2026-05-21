@@ -2,6 +2,66 @@
 
 ## 2026-05-21
 
+### V2 - 05:00 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 0     | 2       | 1154       |
+
+
+#### StudyReserve Product Board - +0 added, ~2 updated, =216 skipped
+  - **[UPDATE]** Manager role should be able to do everything the Admin can - changed: Status: In progress, Week, End date
+  - **[UPDATE]** Settings/ configuration page to the admin app (last week) - changed: Week
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +0 added, ~0 updated, =676 skipped
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### hedwige-ui-rewrite - +0 added, ~0 updated, =116 skipped
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - +0 added, ~0 updated, =78 skipped
+
+#### BYM Project Board - Skipped
+*No items found in the current week.*
+
+#### QueueUp Product Board - Skipped
+*No items found in the current week.*
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### JIT Plastics Product Board - +0 added, ~0 updated, =15 skipped
+
+#### Yanthra Product project - +0 added, ~0 updated, =53 skipped
+
+#### ZOT Web V6 Product Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Sales Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
 ### V1 - 11:00 AM
 
 | Added | Updated | Skipped |
