@@ -2,6 +2,71 @@
 
 ## 2026-05-25
 
+### V2 - 05:00 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 3     | 3       | 1042       |
+
+
+#### StudyReserve Product Board - +0 added, ~0 updated, =219 skipped
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +1 added, ~1 updated, =679 skipped
+  - **[UPDATE]** Refactor agents structure - changed: Status: In review
+  - **[ADD]** Free fact checker - minor changes - 05/22 - fields set: Status: Ready, Week
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### hedwige-ui-rewrite - Skipped
+*No items found in the current week.*
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - +0 added, ~0 updated, =78 skipped
+
+#### BYM Project Board - Skipped
+*No items found in the current week.*
+
+#### QueueUp Product Board - Skipped
+*No items found in the current week.*
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### JIT Plastics Product Board - +1 added, ~1 updated, =14 skipped
+  - **[UPDATE]** User Profile Management - changed: Week
+  - **[ADD]** JWT Based Authentication Bug Fix - fields set: Status: In progress, Week
+
+#### Yanthra Product project - +1 added, ~1 updated, =52 skipped
+  - **[UPDATE]** create client reach excel sheet - changed: Week
+  - **[ADD]** create call structure - fields set: Status: In progress, Week, Start date, End date
+
+#### ZOT Web V6 Product Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Sales Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
 ### V1 - 11:00 AM
 
 | Added | Updated | Skipped |
