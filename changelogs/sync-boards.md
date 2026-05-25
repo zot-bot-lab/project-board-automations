@@ -1,5 +1,78 @@
 # Sync Boards - Run Log
 
+## 2026-05-25
+
+### V1 - 11:00 AM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 0     | 8       | 969       |
+
+
+#### StudyReserve Product Board - +0 added, ~2 updated, =217 skipped
+  - **[UPDATE]** Manager role should be able to do everything the Admin can - changed: Week
+  - **[UPDATE]** Change permission enum types to string - changed: Status: In progress, Week
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +0 added, ~5 updated, =675 skipped
+  - **[UPDATE]** Implement interactive feature tutorial & onboarding analytics - changed: Week, End date
+  - **[UPDATE]** Refactor agents structure - changed: Week
+  - **[UPDATE]** Research: DeepSeek v4 migration - changed: Week
+  - **[UPDATE]** Improve fact check result source citations - changed: Week
+  - **[UPDATE]** Redirect effortagent.com to /free-tools - changed: Week
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### hedwige-ui-rewrite - Skipped
+*No items found in the current week.*
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - +0 added, ~1 updated, =77 skipped
+  - **[UPDATE]** Change the email service we are using for the zotech domain - changed: Week
+
+#### BYM Project Board - Skipped
+*No items found in the current week.*
+
+#### QueueUp Product Board - Skipped
+*No items found in the current week.*
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### JIT Plastics Product Board - Skipped
+*No items found in the current week.*
+
+#### Yanthra Product project - Skipped
+*No items found in the current week.*
+
+#### ZOT Web V6 Product Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Sales Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
+---
+
 ## 2026-05-22
 
 ### V2 - 05:00 PM
@@ -1259,121 +1332,6 @@
 
 #### ZOT Sales Board - +0 added, ~1 updated, =31 skipped
   - **[UPDATE]** Creating a pricing plan for kenya tourism business revamp- Mara Ways Tours & Travel - changed: Status: In review
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
----
-
-## 2026-05-08
-
-### V2 - 06:20 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 0     | 0       | 1217       |
-
-
-#### StudyReserve Product Board - +0 added, ~0 updated, =218 skipped
-
-#### StudyQ Product Board - Skipped
-*No items found in the current week.*
-
-#### EarlyEmu - Document Generator - +0 added, ~0 updated, =663 skipped
-
-#### UnbrandedLK Product Board - Skipped
-*No items found in the current week.*
-
-#### hedwige-ui-rewrite - +0 added, ~0 updated, =110 skipped
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - Skipped
-*No items found in the current week.*
-
-#### Lexigram Product Board - Skipped
-*No items found in the current week.*
-
-#### Lexigram Marketing Board - Skipped
-*No items found in the current week.*
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - +0 added, ~0 updated, =78 skipped
-
-#### BYM Project Board - +0 added, ~0 updated, =36 skipped
-
-#### QueueUp Product Board - +0 added, ~0 updated, =29 skipped
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### JIT Plastics Product Board - +0 added, ~0 updated, =4 skipped
-
-#### Yanthra Product project - +0 added, ~0 updated, =48 skipped
-
-#### ZOT Web V6 Product Board - Skipped
-*No items found in the current week.*
-
-#### ZOT Sales Board - +0 added, ~0 updated, =31 skipped
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
-### V1 - 12:30 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 0     | 1       | 1216       |
-
-
-#### StudyReserve Product Board - +0 added, ~0 updated, =218 skipped
-
-#### StudyQ Product Board - Skipped
-*No items found in the current week.*
-
-#### EarlyEmu - Document Generator - +0 added, ~0 updated, =663 skipped
-
-#### UnbrandedLK Product Board - Skipped
-*No items found in the current week.*
-
-#### hedwige-ui-rewrite - +0 added, ~0 updated, =110 skipped
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - Skipped
-*No items found in the current week.*
-
-#### Lexigram Product Board - Skipped
-*No items found in the current week.*
-
-#### Lexigram Marketing Board - Skipped
-*No items found in the current week.*
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - +0 added, ~0 updated, =78 skipped
-
-#### BYM Project Board - +0 added, ~0 updated, =36 skipped
-
-#### QueueUp Product Board - +0 added, ~0 updated, =29 skipped
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### JIT Plastics Product Board - +0 added, ~1 updated, =3 skipped
-  - **[UPDATE]** Implement NextAuth.js with credentials provider - changed: Status: In progress
-
-#### Yanthra Product project - +0 added, ~0 updated, =48 skipped
-
-#### ZOT Web V6 Product Board - Skipped
-*No items found in the current week.*
-
-#### ZOT Sales Board - +0 added, ~0 updated, =31 skipped
 
 #### ZOT Marketing Board - Skipped
 *No items found in the current week.*
