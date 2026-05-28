@@ -1,5 +1,75 @@
 # Sync Boards - Run Log
 
+## 2026-05-28
+
+### V1 - 11:00 AM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 4     | 3       | 1111       |
+
+
+#### StudyReserve Product Board - +0 added, ~2 updated, =217 skipped
+  - **[UPDATE]** Manager role should be able to do everything the Admin can - changed: Status: In review
+  - **[UPDATE]** Change permission enum types to string - changed: Status: In review
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - +0 added, ~0 updated, =681 skipped
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### hedwige-ui-rewrite - Skipped
+*No items found in the current week.*
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Asset Shield - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - +0 added, ~0 updated, =78 skipped
+
+#### BYM Project Board - +1 added, ~0 updated, =36 skipped
+  - **[ADD]** BYM mono repo migration - fields set: Status: In progress, Week, Start date, End date
+
+#### QueueUp Product Board - +1 added, ~0 updated, =30 skipped
+  - **[ADD]** Adding Location Selector for the customer discover page. - fields set: Status: In progress, Week
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### JIT Plastics Product Board - +0 added, ~0 updated, =16 skipped
+
+#### Yanthra Product project - +0 added, ~1 updated, =53 skipped
+  - **[UPDATE]** create client reach excel sheet - changed: Start date, End date
+
+#### ZOT Web V6 Product Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Sales Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
+#### SL Drive Product Board - +2 added, ~0 updated, =0 skipped
+  - **[ADD]** Research the designing of the landing page  - fields set: Status: In Progress, Week
+  - **[ADD]** Driver registration & onboarding - fields set: Status: In Progress, Week
+
+---
+
 ## 2026-05-27
 
 ### V2 - 05:00 PM
@@ -1197,133 +1267,6 @@
   - **[ADD]** User Profile Management - fields set: Status: In progress, Week
 
 #### Yanthra Product project - +0 added, ~0 updated, =50 skipped
-
-#### ZOT Web V6 Product Board - Skipped
-*No items found in the current week.*
-
-#### ZOT Sales Board - +0 added, ~0 updated, =32 skipped
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
----
-
-## 2026-05-13
-
-### V2 - 07:02 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 3     | 0       | 1184       |
-
-
-#### StudyReserve Product Board - Skipped
-*No items found in the current week.*
-
-#### StudyQ Product Board - Skipped
-*No items found in the current week.*
-
-#### EarlyEmu - Document Generator - +0 added, ~0 updated, =666 skipped
-
-#### UnbrandedLK Product Board - Skipped
-*No items found in the current week.*
-
-#### hedwige-ui-rewrite - +3 added, ~0 updated, =111 skipped
-  - **[ADD]** [FIX] Date Range Selector component issue for “choisir une date” option. - fields set: Status: Ready, Week
-  - **[ADD]** [FIX] Manifesto Page Navigation issues for selecting document - fields set: Status: Ready, Week
-  - **[ADD]** [FIX] client feedback sheet (FB-060 to FB-064) - fields set: Status: Ready, Week
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - +0 added, ~0 updated, =313 skipped
-
-#### Lexigram Product Board - Skipped
-*No items found in the current week.*
-
-#### Lexigram Marketing Board - Skipped
-*No items found in the current week.*
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - Skipped
-*No items found in the current week.*
-
-#### QueueUp Product Board - Skipped
-*No items found in the current week.*
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### JIT Plastics Product Board - +0 added, ~0 updated, =12 skipped
-
-#### Yanthra Product project - +0 added, ~0 updated, =50 skipped
-
-#### ZOT Web V6 Product Board - Skipped
-*No items found in the current week.*
-
-#### ZOT Sales Board - +0 added, ~0 updated, =32 skipped
-
-#### ZOT Marketing Board - Skipped
-*No items found in the current week.*
-
-### V1 - 01:43 PM
-
-| Added | Updated | Skipped |
-|-------|---------|---------|
-| 1     | 3       | 1180       |
-
-
-#### StudyReserve Product Board - Skipped
-*No items found in the current week.*
-
-#### StudyQ Product Board - Skipped
-*No items found in the current week.*
-
-#### EarlyEmu - Document Generator - +0 added, ~0 updated, =666 skipped
-
-#### UnbrandedLK Product Board - Skipped
-*No items found in the current week.*
-
-#### hedwige-ui-rewrite - +0 added, ~0 updated, =111 skipped
-
-#### SRM Product Board - Skipped
-*No items found in the current week.*
-
-#### Asset Shield - +0 added, ~0 updated, =313 skipped
-
-#### Lexigram Product Board - Skipped
-*No items found in the current week.*
-
-#### Lexigram Marketing Board - Skipped
-*No items found in the current week.*
-
-#### Medichive Product Board - Skipped
-*No items found in the current week.*
-
-#### Zotizens Product Board - Skipped
-*No items found in the current week.*
-
-#### BYM Project Board - Skipped
-*No items found in the current week.*
-
-#### QueueUp Product Board - Skipped
-*No items found in the current week.*
-
-#### Invoyze Product Board - Skipped
-*No items found in the current week.*
-
-#### JIT Plastics Product Board - +0 added, ~3 updated, =9 skipped
-  - **[UPDATE]** [Bug] Approved quotes not showing in the order page. - changed: Week
-  - **[UPDATE]** Develop-Admin catalog management page. - changed: Status: In progress, Week
-  - **[UPDATE]** Develop Admin Order and Quote Management Pages - changed: Status: In progress, Week
-
-#### Yanthra Product project - +1 added, ~0 updated, =49 skipped
-  - **[ADD]** Admin Change logo and  Name of company - fields set: Status: In progress, Week, Start date, End date
 
 #### ZOT Web V6 Product Board - Skipped
 *No items found in the current week.*
