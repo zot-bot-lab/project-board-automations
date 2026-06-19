@@ -53,7 +53,7 @@ jobs:
           echo "is_full_sync=$($isFullSync.ToString().ToLower())" >> $env:GITHUB_OUTPUT
           ./scripts/sync-boards/sync-boards.ps1 @syncArgs
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Commit and Push Updates
         run: |
