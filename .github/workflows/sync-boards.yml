@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v5
         with:
           # Use a Personal Access Token with org admin / project write permissions.
-          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Run Sync Script
         id: sync
@@ -53,7 +53,7 @@ jobs:
           echo "is_full_sync=$($isFullSync.ToString().ToLower())" >> $env:GITHUB_OUTPUT
           ./scripts/sync-boards/sync-boards.ps1 @syncArgs
         env:
-          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Commit and Push Updates
         run: |
