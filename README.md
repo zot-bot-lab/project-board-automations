@@ -1,4 +1,4 @@
-# PM Agent Workflows
+# Project Board Syncer
 
 A collection of automated workflows for managing GitHub Project Boards across multiple organizations.
 
