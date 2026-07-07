@@ -380,7 +380,8 @@ function Fetch-ProjectItems {
 
 # Fetch main board items via optimized GraphQL
 Write-Host "[MAIN] Fetching main board items (GraphQL)..."
-$mainItems = Fetch-ProjectItems $mainProjId "main board"
+# @() guards against PowerShell unrolling a zero-element list return into $null.
+$mainItems = @(Fetch-ProjectItems $mainProjId "main board")
 Write-Host "[MAIN] Fetched $($mainItems.Count) items."
 
 $mainUrlMap = @{}
@@ -503,7 +504,10 @@ for ($bi = 0; $bi -lt $config.secondaryBoards.Count; $bi++) {
 
         # Fetch secondary items via optimized GraphQL
         Write-Host "  Fetching items (GraphQL)..."
-        $secItems = Fetch-ProjectItems $secProjId $secProjName
+        # @() guards against PowerShell unrolling a zero-element list return into $null
+        # (e.g. a board with no items yet) - without it, downstream calls that expect a
+        # collection would fail on a null argument.
+        $secItems = @(Fetch-ProjectItems $secProjId $secProjName)
 
         # Detect current week and previous week on this secondary board
         $weekWindow = Get-WeekWindow -Items $secItems -Today $today -RecentPastDays 14

@@ -27,7 +27,10 @@ function Get-UpdateHash {
 
 function Get-WeekWindow {
     param(
-        [Parameter(Mandatory)] $Items,
+        # Not mandatory: a board with zero items is a legitimate state (e.g. a freshly
+        # created board), and $null is what PowerShell hands back when a caller's
+        # zero-element list return gets unrolled onto the pipeline. Treat it as "no items".
+        $Items,
         [Parameter(Mandatory)] [datetime]$Today,
         [int]$RecentPastDays = 14
     )

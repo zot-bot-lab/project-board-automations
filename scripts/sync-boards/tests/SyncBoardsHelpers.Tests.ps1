@@ -92,6 +92,13 @@ Describe "Get-WeekWindow" {
         $result.current | Should -BeNullOrEmpty
         $result.previous | Should -BeNullOrEmpty
     }
+
+    It "does not throw on a null Items collection (e.g. a board with zero items)" {
+        { Get-WeekWindow -Items $null -Today (Get-Date "2026-07-07") } | Should -Not -Throw
+        $result = Get-WeekWindow -Items $null -Today (Get-Date "2026-07-07")
+        $result.current | Should -BeNullOrEmpty
+        $result.previous | Should -BeNullOrEmpty
+    }
 }
 
 Describe "Get-ItemSyncScope" {
