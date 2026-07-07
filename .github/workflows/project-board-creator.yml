@@ -1,0 +1,166 @@
+name: Create Standard Project Board
+
+on:
+  workflow_dispatch:
+    inputs:
+      destination_org:
+        description: "The target GitHub Organization name"
+        required: true
+        default: "team-zeroone"
+        type: string
+      project_title:
+        description: "The title of your new project board"
+        required: true
+        default: "Zotizens Product Board"
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  clone-and-register:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: 🔍 Fetch and Clone Project Board Layout
+        id: clone
+        env:
+          GH_TOKEN: ${{ secrets.CROSS_ORG_PROJECT_TOKEN }}
+          TEMPLATE_ORG: "zot-bot-lab"
+          TEMPLATE_NUMBER: 2
+          DEST_ORG: ${{ inputs.destination_org }}
+          NEW_TITLE: ${{ inputs.project_title }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "❌ Error: The 'CROSS_ORG_PROJECT_TOKEN' repository secret is not set or is empty."
+            echo "This workflow requires a Personal Access Token (PAT) with cross-organization permissions."
+            echo "Please set up the repository secret by following the README instructions."
+            exit 1
+          fi
+
+          echo "🔍 Fetching node IDs for the template and destination org..."
+
+          # Execute GraphQL query via GitHub CLI (pre-installed on runners)
+          ID_PAYLOAD=$(gh api graphql -f query='
+          query($templateOrg: String!, $destOrg: String!, $templateNumber: Int!) {
+            sourceOrg: organization(login: $templateOrg) {
+              projectV2(number: $templateNumber) { id }
+            }
+            targetOrg: organization(login: $destOrg) { id }
+          }' -F templateOrg="$TEMPLATE_ORG" -F destOrg="$DEST_ORG" -F templateNumber=$TEMPLATE_NUMBER)
+
+          TEMPLATE_PROJECT_ID=$(echo "$ID_PAYLOAD" | jq -r '.data.sourceOrg.projectV2.id')
+          DEST_ORG_ID=$(echo "$ID_PAYLOAD" | jq -r '.data.targetOrg.id')
+
+          if [ "$TEMPLATE_PROJECT_ID" == "null" ] || [ "$TEMPLATE_PROJECT_ID" == "" ]; then
+            echo "❌ Error: Unable to access template board #$TEMPLATE_NUMBER in '$TEMPLATE_ORG'."
+            exit 1
+          fi
+
+          if [ "$DEST_ORG_ID" == "null" ] || [ "$DEST_ORG_ID" == "" ]; then
+            echo "❌ Error: Target organization '$DEST_ORG' could not be found or accessed."
+            exit 1
+          fi
+
+          echo "🚀 Template verified. Cloning layout into '$DEST_ORG' as '$NEW_TITLE'..."
+
+          # Run the copy mutation
+          CLONE_PAYLOAD=$(gh api graphql -f query='
+          mutation($projectId: ID!, $ownerId: ID!, $title: String!) {
+            copyProjectV2(input: {projectId: $projectId, ownerId: $ownerId, title: $title}) {
+              projectV2 { id number url }
+            }
+          }' -F projectId="$TEMPLATE_PROJECT_ID" -F ownerId="$DEST_ORG_ID" -F title="$NEW_TITLE")
+
+          NEW_PROJECT_ID=$(echo "$CLONE_PAYLOAD" | jq -r '.data.copyProjectV2.projectV2.id')
+          NEW_PROJECT_NUMBER=$(echo "$CLONE_PAYLOAD" | jq -r '.data.copyProjectV2.projectV2.number')
+          NEW_PROJECT_URL=$(echo "$CLONE_PAYLOAD" | jq -r '.data.copyProjectV2.projectV2.url')
+
+          if [ "$NEW_PROJECT_URL" == "null" ] || [ "$NEW_PROJECT_URL" == "" ]; then
+            echo "❌ Error: Clone mutation failed. Response:"
+            echo "$CLONE_PAYLOAD" | jq .
+            exit 1
+          fi
+
+          echo "project_id=$NEW_PROJECT_ID" >> $GITHUB_OUTPUT
+          echo "project_number=$NEW_PROJECT_NUMBER" >> $GITHUB_OUTPUT
+          echo "project_url=$NEW_PROJECT_URL" >> $GITHUB_OUTPUT
+
+      - name: ⚙️ Update sync-config.json
+        env:
+          DEST_ORG: ${{ inputs.destination_org }}
+          NEW_TITLE: ${{ inputs.project_title }}
+          NEW_PROJECT_ID: ${{ steps.clone.outputs.project_id }}
+          NEW_PROJECT_NUMBER: ${{ steps.clone.outputs.project_number }}
+        run: |
+          CONFIG_PATH="scripts/sync-boards/sync-config.json"
+          
+          # Use jq to append the new project details to secondaryBoards array
+          jq --arg org "$DEST_ORG" \
+             --argjson num "$NEW_PROJECT_NUMBER" \
+             --arg id "$NEW_PROJECT_ID" \
+             --arg name "$NEW_TITLE" \
+             '.secondaryBoards += [{"org": $org, "projectNumber": $num, "projectId": $id, "projectName": $name}]' \
+             "$CONFIG_PATH" > temp.json && mv temp.json "$CONFIG_PATH"
+             
+          echo "✅ sync-config.json updated successfully."
+
+      - name: Install Pester
+        shell: pwsh
+        run: |
+          Install-Module -Name Pester -RequiredVersion 5.5.0 -Force -SkipPublisherCheck -Scope CurrentUser
+
+      - name: Run Pester tests
+        shell: pwsh
+        run: |
+          Import-Module Pester -RequiredVersion 5.5.0
+          $result = Invoke-Pester -Path scripts/sync-boards/tests -CI -PassThru
+          if ($result.FailedCount -gt 0) { exit 1 }
+
+      - name: Commit and Push sync-config.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/sync-boards/sync-config.json
+          git commit -m "chore: auto-register ${{ inputs.project_title }} to sync-config"
+          git pull --rebase origin main
+          git push
+
+      - name: 🎉 Print Summary and Next Steps
+        run: |
+          NEW_PROJECT_URL="${{ steps.clone.outputs.project_url }}"
+          NEW_TITLE="${{ inputs.project_title }}"
+          
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "🎉 Success! New board is ready."
+          echo "🔗 Board URL: $NEW_PROJECT_URL"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo ""
+          echo "⚙️ Next Steps: Connect a Repository (Auto-add)"
+          echo "To automatically add new issues from a repository to this project board:"
+          echo "1. Open the project board: $NEW_PROJECT_URL"
+          echo "2. Click the '...' (three dots) menu in the top-right corner of the project board and select 'Settings'."
+          echo "3. Find the 'Default repository' dropdown and select your repository."
+          echo "4. Return to the board and click the 'Workflows' button in the top-right corner."
+          echo "5. Select the 'Auto-add to project' workflow and turn it on."
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+          # Output to GitHub Summary
+          echo "### 🎉 Standardized Project Board Deployed & Registered!" >> "$GITHUB_STEP_SUMMARY"
+          echo "🔗 [Click here to open your new board: $NEW_TITLE]($NEW_PROJECT_URL)" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "This board has been automatically registered in \`sync-config.json\`." >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "### ⚙️ Next Steps: Connect a Repository (Auto-add)" >> "$GITHUB_STEP_SUMMARY"
+          echo "To automatically add new issues from a repository to this project board:" >> "$GITHUB_STEP_SUMMARY"
+          echo "1. Open the project board using the link above." >> "$GITHUB_STEP_SUMMARY"
+          echo "2. Click the **...** (three dots) menu in the top-right corner of the project board and select **Settings**." >> "$GITHUB_STEP_SUMMARY"
+          echo "3. Find the **Default repository** dropdown and select your repository." >> "$GITHUB_STEP_SUMMARY"
+          echo "4. Return to the board and click the **Workflows** button in the top-right corner." >> "$GITHUB_STEP_SUMMARY"
+          echo "5. Select the **Auto-add to project** workflow and turn it on." >> "$GITHUB_STEP_SUMMARY"
