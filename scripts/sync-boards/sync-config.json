@@ -124,6 +124,12 @@
       "projectNumber": 1,
       "projectId": "PVT_kwDOETKGI84BcD3M",
       "projectName": "BespokeBuilds Board"
+    },
+    {
+      "org": "zot-internal",
+      "projectNumber": 13,
+      "projectId": "PVT_kwDODgXGSs4BdOwA",
+      "projectName": "SpendSei Product Board"
     }
   ],
   "validStatuses": [
