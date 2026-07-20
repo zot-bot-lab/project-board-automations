@@ -2,6 +2,79 @@
 
 ## 2026-07-20
 
+### V7 - 03:00 PM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 7     | 2       | 885       |
+
+
+#### StudyReserve Product Board - Skipped
+*No items found in the current week.*
+
+#### StudyQ Product Board - +2 added, ~0 updated, =48 skipped
+  - **[ADD]** Make topicId optional - fields set: Status: In progress, Week
+  - **[ADD]** Add advanced question filters - fields set: Status: In progress, Week
+
+#### EarlyEmu - Document Generator - +0 added, ~0 updated, =733 skipped
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### Assetshield Product Board - Skipped
+*No items found in the current week.*
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Hedwige-crawling - +0 added, ~0 updated, =38 skipped
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - Skipped
+*No items found in the current week.*
+
+#### BYM Project Board - Skipped
+*No items found in the current week.*
+
+#### QueueUp Product Board - +0 added, ~2 updated, =38 skipped
+  - **[UPDATE]** QueueUp Bug Fixing - changed: Week
+  - **[UPDATE]** Manual QA - internal - changed: Week
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### Yanthra Product project - Skipped
+*No items found in the current week.*
+
+#### ZOT Web V6 Product Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Sales Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
+#### SL Drive Product Board - +0 added, ~0 updated, =24 skipped
+
+#### BespokeBuilds Board - Skipped
+*No items found in the current week.*
+
+#### SpendSei Product Board - +5 added, ~0 updated, =4 skipped
+  - **[ADD]** Review the App store app submission failure - fields set: Status: In progress, Week
+  - **[ADD]** [FIX] delete account flow - fields set: Status: Ready, Week
+  - **[ADD]** Research on STMP provider and enable them into application - fields set: Status: Done, Week
+  - **[ADD]** Research on STMP providers and enabled into project - fields set: Status: Ready, Week
+  - **[ADD]** Resumbit for app review in app store - fields set: Status: Ready, Week
+
 ### V6 - 02:00 PM
 
 | Added | Updated | Skipped |
