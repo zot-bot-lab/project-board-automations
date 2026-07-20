@@ -2,6 +2,81 @@
 
 ## 2026-07-20
 
+### V2 - 10:00 AM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 0     | 6       | 32       |
+
+
+#### StudyReserve Product Board - Skipped
+*No items found in the current week.*
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - Skipped
+*No items found in the current week.*
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### Assetshield Product Board - Skipped
+*No items found in the current week.*
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Hedwige-crawling - +0 added, ~6 updated, =32 skipped
+  - **[UPDATE]** [P1] Paris Terres d'Envol (Wordpress) - Week 2 (last week) - changed: Status: In Review
+  - **[UPDATE]** [P1] Publiact Company Directory (Publiact) - Week 3 (last week) - changed: Status: In Review, Week
+  - **[UPDATE]** [P1] Épinay-sur-Seine Acts (Wordpress - sitemap) - Week 3 (last week) - changed: Status: In Review, Week
+  - **[UPDATE]** [P2] Poix-de-Picardie Calaméo (Calaméo) - Week 4 - changed: Status: Ready, Week
+  - **[UPDATE]** [P2] Grigny91 Open Data (Open Data Export) - Week 4 - changed: Status: Ready, Week
+  - **[UPDATE]** [P2] La Mayenne Export (Open Data Export) - Week 4 - changed: Status: Ready, Week
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - Skipped
+*No items found in the current week.*
+
+#### BYM Project Board - Skipped
+*No items found in the current week.*
+
+#### QueueUp Product Board - Skipped
+*No items found in the current week.*
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### Yanthra Product project - Skipped
+*No items found in the current week.*
+
+#### ZOT Web V6 Product Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Sales Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
+#### SL Drive Product Board - Skipped
+*No items found in the current week.*
+
+#### BespokeBuilds Board - Skipped
+*No items found in the current week.*
+
+#### SpendSei Product Board - Skipped
+*No items found in the current week.*
+
 ### V1 - 09:00 AM
 
 | Added | Updated | Skipped |
