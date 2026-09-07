@@ -2,6 +2,83 @@
 
 ## 2026-09-07
 
+### V3 - 11:00 AM
+
+| Added | Updated | Skipped |
+|-------|---------|---------|
+| 0     | 8       | 32       |
+
+
+#### StudyReserve Product Board - Skipped
+*No items found in the current week.*
+
+#### StudyQ Product Board - Skipped
+*No items found in the current week.*
+
+#### EarlyEmu - Document Generator - Skipped
+*No items found in the current week.*
+
+#### UnbrandedLK Product Board - Skipped
+*No items found in the current week.*
+
+#### Assetshield Product Board - +0 added, ~8 updated, =32 skipped
+  - **[UPDATE]** [01] Enrol in the Apple Developer Program (organisation) - changed: Week
+  - **[UPDATE]** [02] Create the AWS account and IAM user for delivery - changed: Status: In progress, Week
+  - **[UPDATE]** [03] Request Bedrock model access for both models in the target region - changed: Week
+  - **[UPDATE]** [04] Decide the domain: a real domain, or accept sslip.io - changed: Week
+  - **[UPDATE]** [05] Choose the container registry and add CI credentials - changed: Week
+  - **[UPDATE]** [07] Container set builds and runs locally (Phase D1) - changed: Week
+  - **[UPDATE]** [08] Provision the production EC2 environment (Phase D2) - changed: Week
+  - **[UPDATE]** [09] Staging environment and image-tag release pipeline (Phase D3) - changed: Week
+
+#### SRM Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Product Board - Skipped
+*No items found in the current week.*
+
+#### Lexigram Marketing Board - Skipped
+*No items found in the current week.*
+
+#### Hedwige-crawling - Skipped
+*No items found in the current week.*
+
+#### Medichive Product Board - Skipped
+*No items found in the current week.*
+
+#### Zotizens Product Board - Skipped
+*No items found in the current week.*
+
+#### BYM Project Board - Skipped
+*No items found in the current week.*
+
+#### QueueUp Product Board - Skipped
+*No items found in the current week.*
+
+#### Invoyze Product Board - Skipped
+*No items found in the current week.*
+
+#### Yanthra Product project - Skipped
+*No items found in the current week.*
+
+#### ZOT Web V6 Product Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Sales Board - Skipped
+*No items found in the current week.*
+
+#### ZOT Marketing Board - Skipped
+*No items found in the current week.*
+
+#### SL Drive Product Board - Skipped
+*No items found in the current week.*
+
+#### BespokeBuilds Board - Skipped
+*No items found in the current week.*
+
+#### SpendSei Product Board - Skipped
+*No items found in the current week.*
+
 ### V2 - 10:00 AM
 
 | Added | Updated | Skipped |
